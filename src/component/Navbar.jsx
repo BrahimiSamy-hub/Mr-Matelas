@@ -100,19 +100,16 @@ const Navbar = () => {
           </button>
         </div> */}
         <LanguageDropdown />
-        <button
-          className='ml-6 mr-2 relative hidden lg:flex'
-          onClick={toggleCart}
-        >
+        <button className='ml-6 mr-2 relative lg:flex' onClick={toggleCart}>
           <IoCartOutline size={40} />
           <span className='absolute -top-2 -right-3 flex items-center justify-center w-6 h-6 font-bold text-white bg-black rounded-full '>
             <h6 className='mb-0.5'>{totalItems}</h6>
           </span>
         </button>
 
-        <div className='ml-auto lg:hidden' onClick={toggleNavigation}>
+        {/* <div className='ml-auto lg:hidden' onClick={toggleNavigation}>
           <MenuSvg openNavigation={openNavigation} />
-        </div>
+        </div> */}
       </div>
     </div>
   )

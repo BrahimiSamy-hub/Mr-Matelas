@@ -1,32 +1,26 @@
-import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useProducts } from '../../context/ProductContext'
 
-const Pagination = ({ onPageChange }) => {
-  const [currentPage, setCurrentPage] = useState(1)
+const Pagination = () => {
+  const { currentPage, totalPages, setPage } = useProducts()
   const { i18n } = useTranslation()
-  const totalPages = 2
 
   const isRTL = i18n.language === 'ar'
 
   const handlePreviousClick = () => {
     if (currentPage > 1) {
-      const newPage = currentPage - 1
-      setCurrentPage(newPage)
-      onPageChange(newPage)
+      setPage(currentPage - 1)
     }
   }
 
   const handleNextClick = () => {
     if (currentPage < totalPages) {
-      const newPage = currentPage + 1
-      setCurrentPage(newPage)
-      onPageChange(newPage)
+      setPage(currentPage + 1)
     }
   }
 
   const handlePageClick = (page) => {
-    setCurrentPage(page)
-    onPageChange(page)
+    setPage(page)
   }
 
   return (
