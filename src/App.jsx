@@ -8,7 +8,7 @@ import Product from '../src/pages/Product'
 import SingleProduct from '../src/pages/SingleProduct'
 import Checkout from '../src/pages/Checkout'
 import Navbar from '../src/component/Navbar'
-import Footer from '../src/component/Footer'
+import { CategoriesProvider } from './context/CategoriesContext'
 import Cart from '../src/component/Cart'
 import { CartProvider } from './context/CartContext'
 import { ProductProvider } from './context/ProductContext'
@@ -28,18 +28,23 @@ const App = () => {
     <Router>
       <QueryClientProvider client={queryClient}>
         <ProductProvider>
-          <CartProvider>
-            <Navbar />
-            <Routes>
-              {/* <Route path='/' element={<Home />} /> */}
-              <Route path='/about' element={<About />} />
-              <Route path='/' element={<Product />} />
-              <Route path='/singleProduct' element={<SingleProduct />} />
-              <Route path='/Checkout' element={<Checkout />} />
-              <Route path='/products/:productId' element={<SingleProduct />} />
-            </Routes>
-            <Cart />
-          </CartProvider>
+          <CategoriesProvider>
+            <CartProvider>
+              <Navbar />
+              <Routes>
+                {/* <Route path='/' element={<Home />} /> */}
+                <Route path='/about' element={<About />} />
+                <Route path='/' element={<Product />} />
+                <Route path='/singleProduct' element={<SingleProduct />} />
+                <Route path='/Checkout' element={<Checkout />} />
+                <Route
+                  path='/products/:productId'
+                  element={<SingleProduct />}
+                />
+              </Routes>
+              <Cart />
+            </CartProvider>
+          </CategoriesProvider>
         </ProductProvider>
       </QueryClientProvider>
     </Router>

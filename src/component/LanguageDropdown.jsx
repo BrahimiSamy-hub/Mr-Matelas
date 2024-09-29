@@ -34,8 +34,8 @@ const LanguageDropdown = () => {
     >
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className='bg-white p-2 w-[60px] flex items-center justify-between
-                   font-bold text-l rounded-lg tracking-wider border-[2px] border-black
+        className='bg-white p-2 w-[50px] flex items-center justify-between
+                   font-bold text-l rounded-lg tracking-wider border-[2px] border-[#242323c0]
                    duration-300 active:text-white'
       >
         <MdLanguage />
@@ -51,7 +51,7 @@ const LanguageDropdown = () => {
                 setIsOpen(false)
               }}
               className={`flex w-full items-center justify-between px-2 hover:bg-gray-300 cursor-pointer rounded-l border-l-transparent ${
-                i18n.language === code ? 'bg-black text-white' : ''
+                i18n.language === code ? 'bg-[#242323c0] text-white' : ''
               }`}
             >
               <h3>{label}</h3>

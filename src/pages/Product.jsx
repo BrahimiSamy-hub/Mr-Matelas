@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Filter from '../component/Products/Filter'
 import Footer from '../component/Footer'
@@ -13,7 +12,6 @@ const useQuery = () => {
 
 const Product = () => {
   const { products, totalDocs, isLoading, isError, error } = useProducts()
-
   const { t, i18n } = useTranslation()
   const query = useQuery()
   const selectedCategories = query.get('categories')?.split(',') || []
@@ -68,11 +66,19 @@ const Product = () => {
                     className='group relative col-span-4 sm:col-span-4 lg:col-span-1'
                     data-aos='fade-up'
                   >
-                    <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:w-full'>
+                    <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:w-full relative'>
+                      {/* First image */}
                       <img
                         src={product.images.urls[0]}
                         alt={imageAlt}
-                        className='h-full w-full object-contain object-center lg:h-full lg:w-full group-hover:scale-105 duration-150 transition-transform'
+                        className='h-full w-full object-contain object-center lg:h-full lg:w-full group-hover:scale-105 duration-150 transition-transform first-image'
+                        loading='lazy'
+                      />
+                      {/* Second image for hover */}
+                      <img
+                        src={product.images.urls[1]}
+                        alt={imageAlt}
+                        className='h-full w-full object-contain object-center lg:h-full lg:w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 hover-image'
                         loading='lazy'
                       />
                     </div>

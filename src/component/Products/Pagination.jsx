@@ -26,7 +26,7 @@ const Pagination = () => {
   return (
     <div className='flex items-center space-x-2 justify-end mt-6'>
       <button
-        className={`p-2 border w-8 h-8 rounded-lg flex items-center justify-center ${
+        className={`p-2 border w-8 h-8 rounded-lg flex items-center ml-2  justify-center ${
           currentPage === 1
             ? 'bg-gray-200 text-gray-400'
             : 'bg-white text-black'
@@ -34,9 +34,9 @@ const Pagination = () => {
         onClick={handlePreviousClick}
         disabled={currentPage === 1}
       >
-        <span className='sr-only'>{isRTL ? 'التالي' : 'Previous'}</span>
+        <span className='sr-only  '>{isRTL ? 'التالي' : 'Previous'}</span>
         <svg
-          className={`w-4 h-4 ${isRTL ? 'transform rotate-180' : ''}`}
+          className={`w-4 h-4  ${isRTL ? 'transform rotate-180' : ''}`}
           fill='none'
           stroke='currentColor'
           viewBox='0 0 24 24'
@@ -55,7 +55,7 @@ const Pagination = () => {
         return (
           <button
             key={page}
-            className={`p-2 border w-8 h-8 rounded-lg flex items-center justify-center ${
+            className={`p-2 border   w-8 h-8  rounded-lg flex items-center justify-center ${
               currentPage === page
                 ? 'bg-black text-white'
                 : 'bg-white text-black'
@@ -67,7 +67,7 @@ const Pagination = () => {
         )
       })}
       <button
-        className={`p-2 border w-8 h-8 rounded-lg flex items-center justify-center ${
+        className={`p-2 border    w-8 h-8 rounded-lg flex items-center justify-center ${
           currentPage === totalPages
             ? 'bg-gray-200 text-gray-400'
             : 'bg-white text-black'
@@ -77,7 +77,7 @@ const Pagination = () => {
       >
         <span className='sr-only'>{isRTL ? 'السابق' : 'Next'}</span>
         <svg
-          className={`w-4 h-4 ${isRTL ? 'transform rotate-180' : ''}`}
+          className={`w-4 h-4 ${isRTL ? 'transform rotate-180 ' : ''}`}
           fill='none'
           stroke='currentColor'
           viewBox='0 0 24 24'
