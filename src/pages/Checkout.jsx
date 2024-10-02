@@ -243,16 +243,17 @@ const Checkout = () => {
                     <li key={product.id} className='flex py-6'>
                       <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
                         <img
+                          draggable='false'
                           loading='lazy'
                           src={product.imageSrc}
                           alt={product.imageAlt}
-                          className='h-full w-full object-cover object-center'
+                          className='h-full w-full object-contain object-center'
                         />
                       </div>
 
                       <div className='ml-4 flex flex-1 flex-col'>
                         <div>
-                          <div className='flex justify-between text-base font-medium '>
+                          <div className='flex justify-between text-base font-medium mr-2 '>
                             <h3>{product.name}</h3>
                             <p className='ml-4'>
                               {product.price}
@@ -261,19 +262,26 @@ const Checkout = () => {
                               </small>
                             </p>
                           </div>
-                          <p className='mt-1 text-sm text-gray-500'>
-                            {product.color}
+                          <p className='flex-row mt-1 text-md text-gray-500  mr-2'>
+                            <div
+                              style={{
+                                backgroundColor: product.color,
+                              }}
+                              className='justify-center w-6 h-6 mb-1 rounded-full border border-gray-300'
+                            ></div>
+                            {product.size?.longeur} * {product.size?.largeur} *{' '}
+                            {product.size?.epesseur}
                           </p>
                         </div>
-                        <div className='flex flex-1 items-end justify-between text-sm'>
+                        <div className='flex flex-1 items-end justify-between text-md  mr-2'>
                           <p className='text-gray-500'>
                             {t('qty')} x{product.quantity}
                           </p>
 
-                          <div className='flex'>
+                          {/* <div className='flex'>
                             <button
                               type='button'
-                              className='font-medium text-red-500 hover:text-red-300'
+                              className='font-medium text-red-500 ml-4 hover:text-red-300'
                               onClick={() =>
                                 removeFromCart(
                                   product.id,
@@ -284,7 +292,7 @@ const Checkout = () => {
                             >
                               {t('remove')}
                             </button>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </li>

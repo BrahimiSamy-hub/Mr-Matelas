@@ -1,10 +1,11 @@
+import bg from '../../assets/hero.webp'
 const Hero = () => {
   return (
     <div>
       <img
-        src=''
+        src={bg}
         alt=''
-        className='h-screen w-screen object-cover'
+        className='h-screen w-screen object-fill'
         loading='lazy'
       />
     </div>

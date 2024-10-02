@@ -1,77 +1,76 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 import { Link } from 'react-router-dom'
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
+import lits from '../../assets/lits.webp'
+import matelas from '../../assets/matelasC.webp'
+import oreillers from '../../assets/oreillers.webp'
+import linge from '../../assets/Linge.webp'
+import { CategoriesProvider } from '../../context/CategoriesContext'
+import { FaArrowRight } from 'react-icons/fa'
+const ProductCollection = () => {
+  const products = [
+    {
+      title: 'Discover Skincare',
+      imageUrl: lits, // Replace with the actual image
+      productCount: 2,
+    },
+    {
+      title: 'Beauty of Skin',
+      imageUrl: matelas, // Replace with the actual image
+      productCount: 2,
+    },
+    {
+      title: 'Awesome Lip Care',
+      imageUrl: oreillers, // Replace with the actual image
+      productCount: 2,
+    },
+    {
+      title: 'Facial Care',
+      imageUrl: linge, // Replace with the actual image
+      productCount: 2,
+    },
+  ]
 
-function App() {
   return (
-    <section>
-      <h1 className='heading font-bold text-center mb-8 text-2xl'>
-        Featured Products
-      </h1>
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        pagination={{ el: '.swiper-pagination', clickable: true }}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-          clickable: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className='swiper_container'
-      >
-        {[...Array(6)].map((_, index) => (
-          <SwiperSlide key={index} className='relative group'>
-            <Link to='/singleproduct' className='block'>
-              <div className='relative overflow-hidden'>
-                <img
-                  src='https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg'
-                  alt='slide_image'
-                  loading='lazy'
-                  className='w-full transition-opacity duration-500 group-hover:opacity-0'
-                />
-                <img
-                  src='https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg'
-                  alt='slide_image'
-                  loading='lazy'
-                  className='w-full absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100'
-                />
-                <div className='absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-500 group-hover:opacity-100'>
-                  <h2 className='text-white text-lg font-semibold'>
-                    Product Name
-                  </h2>
-                  <p className='text-white text-sm'>
-                    3500{' '}
-                    <small>
-                      <sup>DA</sup>
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </SwiperSlide>
-        ))}
-        <div className='slider-controler'>
-          <div className='swiper-pagination'></div>
+    <section className='py-12'>
+      <div className='flex justify-between items-center mb-8'>
+        <div>
+          <h2 className='text-orange-500 font-medium mb-2'>
+            Product Collection
+          </h2>
+          <h1 className='text-3xl md:text-4xl font-bold text-gray-800'>
+            Discover our products
+          </h1>
         </div>
-      </Swiper>
+        <Link
+          to='/shop'
+          className='text-gray-800 font-medium border px-4 py-2 rounded-lg hover:bg-gray-100 flex gap-2 items-center'
+        >
+          Shop All Products <FaArrowRight />
+        </Link>
+      </div>
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 lg:gap-16'>
+        {products.map((product, index) => (
+          <div
+            key={index}
+            className='relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg hover:scale-110  transition-transform duration-500 hover:cursor-pointer'
+          >
+            <img
+              src={product.imageUrl}
+              alt={product.title}
+              className='w-full h-full object-fill group-hover:scale-110 transition-transform duration-500'
+            />
+            <div className='absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4'>
+              <h3 className='text-black text-lg font-bold'>{product.title}</h3>
+              <small className='text-orange-500'>
+                {product.productCount} Products
+              </small>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
 
-export default App
+export default ProductCollection

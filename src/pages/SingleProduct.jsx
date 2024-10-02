@@ -83,9 +83,11 @@ const SingleProduct = () => {
     const item = {
       id: product._id,
       name: productName,
-      price: product.price,
+      price: selectedSize.price,
       imageSrc: selectedImage || '',
       imageAlt: productName,
+      color: selectedColor || '',
+      size: selectedSize || '',
     }
     addToCart(item)
   }
@@ -95,9 +97,11 @@ const SingleProduct = () => {
     const item = {
       id: product._id,
       name: productName,
-      price: product.price,
+      price: selectedSize.price,
       imageSrc: selectedImage || '',
       imageAlt: productName,
+      color: selectedColor || '',
+      size: selectedSize || '',
     }
     addToCart(item)
     navigate('/checkout')
@@ -130,7 +134,7 @@ const SingleProduct = () => {
                 {product.images &&
                   product.images.urls &&
                   product.images.urls.length > 0 && (
-                    <div className='mt-4 space-x-2 flex justify-between'>
+                    <div className='mt-4 space-x-2 flex justify-around'>
                       {product.images.urls.map((url, index) => (
                         <img
                           key={index}
@@ -153,7 +157,7 @@ const SingleProduct = () => {
 
             {/* Product Details */}
             <div className='sm:col-span-8 lg:col-span-7'>
-              <h2 className='text-4xl text-gray-900 flex justify-between'>
+              <h2 className='text-5xl text-gray-900 flex justify-between'>
                 <span className='font-bold'>{productName}</span>
                 <small
                   className={classNames(
@@ -168,8 +172,8 @@ const SingleProduct = () => {
               </h2>
 
               <div className='mt-2'>
-                <p className='text-2xl text-gray-900 font-bold'>
-                  {product.price}
+                <p className='text-3xl text-gray-900 font-bold'>
+                  {selectedSize.price}
                   <small>
                     <sup className='ml-1'>DA</sup>
                   </small>
@@ -230,6 +234,29 @@ const SingleProduct = () => {
                   )}
 
                   {/* Description */}
+                  <div className='mt-10'>
+                    <ul>
+                      <li className='flex gap-1 font-bold'>
+                        Type :{' '}
+                        <p className='text-md font-medium'> {product.type}</p>
+                      </li>
+                      <li className='flex gap-1 font-bold'>
+                        Nombre de places :{' '}
+                        <p className='text-md font-medium'>
+                          {product.spots} place(s)
+                        </p>
+                      </li>
+                      <li className='flex gap-1 font-bold'>
+                        Type :{' '}
+                        <p className='text-md font-medium'>
+                          {product.spotType}
+                        </p>
+                      </li>
+                    </ul>
+                    <p></p>
+                    <p className='text-sm text-gray-700'></p>
+                    <p className='text-sm text-gray-700'></p>
+                  </div>
                   {productDescription && (
                     <div className='mt-10'>
                       <p className='text-sm text-gray-700'>
@@ -256,7 +283,7 @@ const SingleProduct = () => {
                         {t('chooseSize')}
                       </RadioGroup.Label>
                       <div className='grid grid-cols-4 gap-4'>
-                        {product.sizes.map((size) => (
+                        {product?.sizes?.map((size) => (
                           <RadioGroup.Option
                             key={size._id}
                             value={size}
@@ -274,9 +301,13 @@ const SingleProduct = () => {
                             {({ active, checked }) => (
                               <>
                                 <RadioGroup.Label as='span'>
-                                  {size.longeur} * {size.largeur} *{' '}
-                                  {size.epesseur}
+                                  {size?.longeur &&
+                                  size?.largeur &&
+                                  size?.epesseur
+                                    ? `${size?.longeur} * ${size?.largeur} * ${size?.epesseur}`
+                                    : 'Invalid size'}
                                 </RadioGroup.Label>
+
                                 {size.inStock ? (
                                   <span
                                     className={classNames(
@@ -320,13 +351,17 @@ const SingleProduct = () => {
                   {/* Add to Cart Button */}
                   <button
                     type='submit'
-                    className={`mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:opacity-75  ${
-                      !product.inStock && 'opacity-25 cursor-not-allowed'
+                    className={`mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:opacity-75 ${
+                      product.sizes.every((size) => !size.inStock)
+                        ? 'opacity-25 cursor-not-allowed'
+                        : ''
                     }`}
                     onClick={handleAddToCart}
-                    disabled={!product.inStock}
+                    disabled={product.sizes.every((size) => !size.inStock)}
                   >
-                    {product.inStock ? t('addToCart') : t('outOfStock')}
+                    {product.sizes.every((size) => !size.inStock)
+                      ? t('outOfStock')
+                      : t('addToCart')}
                   </button>
                 </form>
               </div>

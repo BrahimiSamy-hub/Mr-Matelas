@@ -88,7 +88,7 @@ const Cart = () => {
 
                                   <div className='ml-4 flex flex-1 flex-col'>
                                     <div>
-                                      <div className='flex justify-between text-base font-medium'>
+                                      <div className='flex justify-between text-base font-medium mr-2'>
                                         <h3>{t(product.name)}</h3>
                                         <p className='ml-4'>
                                           {product.price}{' '}
@@ -97,11 +97,19 @@ const Cart = () => {
                                           </small>
                                         </p>
                                       </div>
-                                      <p className='mt-1 text-sm text-gray-500'>
-                                        {product.color} / {product.size}
+                                      <p className=' flex-row mt-1 text-sm text-gray-500 mr-2'>
+                                        <div
+                                          style={{
+                                            backgroundColor: product.color,
+                                          }}
+                                          className='justify-center w-6 h-6 mb-1 rounded-full border border-gray-300 mr-2'
+                                        ></div>
+                                        {product.size?.longeur} *{' '}
+                                        {product.size?.largeur} *{' '}
+                                        {product.size?.epesseur}
                                       </p>
                                     </div>
-                                    <div className='flex flex-1 items-end justify-between text-sm'>
+                                    <div className='flex flex-1 -mt-2 items-end justify-between text-sm mr-2'>
                                       <p className='text-gray-500'>
                                         {t('qty')} x{product.quantity}
                                       </p>
@@ -109,7 +117,7 @@ const Cart = () => {
                                       <div className='flex hover:opacity-75'>
                                         <button
                                           type='button'
-                                          className='font-medium text-red-500 border-2 border-red-500 rounded'
+                                          className='font-medium text-red-500 rounded'
                                           onClick={() =>
                                             removeFromCart(
                                               product.id,
@@ -155,7 +163,7 @@ const Cart = () => {
                         <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
                           <p>
                             {t('or')}{' '}
-                            <Link to='/product'>
+                            <Link to='/'>
                               <button
                                 type='button'
                                 className='font-medium text-color-1 hover:opacity-75'

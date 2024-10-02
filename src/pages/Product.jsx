@@ -12,6 +12,7 @@ const useQuery = () => {
 
 const Product = () => {
   const { products, totalDocs, isLoading, isError, error } = useProducts()
+
   const { t, i18n } = useTranslation()
   const query = useQuery()
   const selectedCategories = query.get('categories')?.split(',') || []
@@ -37,18 +38,18 @@ const Product = () => {
 
   return (
     <>
-      <section>
+      <div>
         <div className=''>
           <div className='flex'>
-            <div className='hidden lg:block sm:block'>
-              <Filter />
-            </div>
+            {/* <div className='hidden lg:block sm:block'> */}
+            {/* <Filter /> */}
+            {/* </div> */}
             <div className='mt-6 grid grid-cols-2 lg:gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-4'>
-              <div className='col-span-4 mb-[-50px]' data-aos='fade-up'>
+              {/* <div className='col-span-4 mb-[-50px]' data-aos='fade-up'>
                 <div className='flex justify-between'>
                   <h3>{t('productsFound', { count: totalDocs })}</h3>
                 </div>
-              </div>
+              </div> */}
               {filteredProducts.map((product) => {
                 // Dynamically get product and category names based on language
                 const productName =
@@ -71,7 +72,7 @@ const Product = () => {
                       <img
                         src={product.images.urls[0]}
                         alt={imageAlt}
-                        className='h-full w-full object-contain object-center lg:h-full lg:w-full group-hover:scale-105 duration-150 transition-transform first-image'
+                        className='h-[200px] w-full object-contain object-center lg:h-[200px] lg:w-full group-hover:scale-105 duration-150 transition-transform first-image'
                         loading='lazy'
                       />
                       {/* Second image for hover */}
@@ -82,7 +83,7 @@ const Product = () => {
                         loading='lazy'
                       />
                     </div>
-                    <div className='mt-4 flex justify-between'>
+                    <div className='mt-2 flex justify-between'>
                       <div>
                         <h3 className='text-black'>
                           <Link to={`/products/${product._id}`}>
@@ -98,7 +99,7 @@ const Product = () => {
                         </small>
                       </div>
                       <p className='text-md font-medium text-gray-900'>
-                        {product.price}
+                        {product.sizes[0].price}
                         <small className='font-bold ml-1'>
                           <sup>{t('devise')}</sup>
                         </small>
@@ -111,8 +112,7 @@ const Product = () => {
           </div>
           <Pagination />
         </div>
-      </section>
-      <Footer />
+      </div>
     </>
   )
 }

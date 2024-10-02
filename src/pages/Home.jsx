@@ -4,10 +4,10 @@ import Footer from '../component/Footer'
 import Categories from '../component/Home/Categories'
 const Home = () => {
   return (
-    <div className='h-screen'>
+    <div className='h-screen bg-[#eaded7]'>
       <Hero />
-      <Categories />
-      {/* <Featured /> */}
+      {/* <Categories /> */}
+      <Featured />
       <Footer />
     </div>
   )

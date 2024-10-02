@@ -56,7 +56,8 @@ const Navbar = () => {
     <div className='z-50 fixed flex w-full bg-white p-4 justify-between px-6 items-center shadow-sm min-h-20'>
       <div className='justify-center'>
         <NavLink to='/'>
-          <img src={yourlogo} alt='logo' className='' loading='lazy' />
+          {/* <img src={yourlogo} alt='logo' className='' loading='lazy' /> */}
+          <h1 className='text-4xl font-extrabold'>Mister Matelas</h1>
         </NavLink>
       </div>
       <nav className='items-center justify-center hidden lg:flex'>
@@ -107,9 +108,9 @@ const Navbar = () => {
           </span>
         </button>
 
-        {/* <div className='ml-auto lg:hidden' onClick={toggleNavigation}>
+        <div className='ml-auto lg:hidden' onClick={toggleNavigation}>
           <MenuSvg openNavigation={openNavigation} />
-        </div> */}
+        </div>
       </div>
     </div>
   )
