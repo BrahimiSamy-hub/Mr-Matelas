@@ -8,6 +8,8 @@ export const useCategories = () => useContext(CategoriesContext)
 
 const fetchCategories = async () => {
   const { data } = await axios.get(`/categories`)
+  console.log(data)
+
   return data
 }
 

@@ -97,7 +97,7 @@ const Cart = () => {
                                           </small>
                                         </p>
                                       </div>
-                                      <p className=' flex-row mt-1 text-sm text-gray-500 mr-2'>
+                                      <div className=' flex-row mt-1 text-sm text-gray-500 mr-2'>
                                         <div
                                           style={{
                                             backgroundColor: product.color,
@@ -107,7 +107,7 @@ const Cart = () => {
                                         {product.size?.longeur} *{' '}
                                         {product.size?.largeur} *{' '}
                                         {product.size?.epesseur}
-                                      </p>
+                                      </div>
                                     </div>
                                     <div className='flex flex-1 -mt-2 items-end justify-between text-sm mr-2'>
                                       <p className='text-gray-500'>

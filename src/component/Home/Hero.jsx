@@ -10,7 +10,7 @@ const Hero = () => {
     >
       <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full pt-28'>
         <p className='text-xl font-montserrat text-blue-300'>
-          Our New collections
+          Our new products
         </p>
 
         <h1 className='mt-10 text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
@@ -22,10 +22,10 @@ const Hero = () => {
         </h1>
         <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'></p>
 
-        <Button label='Check it out' iconURL='' />
+        <Button label='Check it out' />
       </div>
 
-      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-blue-200 bg-cover bg-center'>
+      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-blue-200 bg-cover bg-center ml-20'>
         <img
           src={matelas}
           alt='shoe colletion'

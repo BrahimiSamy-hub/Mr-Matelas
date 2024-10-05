@@ -67,7 +67,7 @@ const Product = () => {
                     className='group relative col-span-4 sm:col-span-4 lg:col-span-1'
                     data-aos='fade-up'
                   >
-                    <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:w-full relative'>
+                    <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-100 lg:aspect-none lg:w-full relative group-hover:scale-95 group duration-300 transition-transform'>
                       {/* First image */}
                       <img
                         src={product.images.urls[0]}
