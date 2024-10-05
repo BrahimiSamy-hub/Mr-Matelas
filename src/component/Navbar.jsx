@@ -53,7 +53,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='z-50 fixed flex w-full bg-white p-4 justify-between px-6 items-center shadow-sm min-h-20'>
+    <div className='z-50 fixed flex w-full bg-white sm:px-16 px-8 justify-between  items-center shadow-sm min-h-20'>
       <div className='justify-center'>
         <NavLink to='/'>
           {/* <img src={yourlogo} alt='logo' className='' loading='lazy' /> */}

@@ -1,6 +1,6 @@
 import Footer from '../component/Footer'
 import { useTranslation } from 'react-i18next'
-
+import Services from '../component/Home/Services'
 const About = () => {
   const { t } = useTranslation()
 
@@ -23,6 +23,9 @@ const About = () => {
           ></iframe>
         </div>
       </section>
+      <div className='sm:px-16 px-8 py-10'>
+        <Services />
+      </div>
 
       <Footer />
     </>
