@@ -10,9 +10,9 @@ const fetchProducts = async ({ queryKey }) => {
   const [_, page, limit, category] = queryKey
   const params = { page, limit }
   if (category) {
-    params.category = category // Ensure category is being passed
+    params.category = category
   }
-  console.log('Fetching products with params:', params) // Log the params
+
   const { data } = await axios.get(`/products`, { params })
   return data
 }
@@ -20,7 +20,7 @@ const fetchProducts = async ({ queryKey }) => {
 export const ProductProvider = ({ children }) => {
   const [page, setPage] = useState(1)
   const [limit, setLimit] = useState(12)
-  const [category, setCategory] = useState('66f818a00c0831c91c7f1c7d')
+  const [category, setCategory] = useState('')
 
   const { data, error, isLoading, isError } = useQuery({
     queryKey: ['products', page, limit, category], // category must be in the queryKey

@@ -14,6 +14,9 @@ export default {
         '4xl': ['48px', '58px'],
         '8xl': ['96px', '106px'],
       },
+      backgroundImage: {
+        'hero-pattern': "url('E:ProjetMr-matelassrcassetshero.webp')",
+      },
       fontFamily: {
         palanquin: ['Palanquin', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],

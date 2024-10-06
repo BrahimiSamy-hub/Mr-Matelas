@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { matelas } from '../../assets'
+import hero from '../../assets/hero.png'
 import Button from '../Button'
 
 const Hero = () => {
@@ -25,14 +25,17 @@ const Hero = () => {
         <Button label='Check it out' />
       </div>
 
-      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-blue-200 bg-cover bg-center ml-20'>
-        <img
+      <div
+        className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-cover h-screen bg-center bg-no-repeat'
+        style={{ backgroundImage: `url(${hero})` }}
+      >
+        {/* <img
           src={matelas}
           alt='shoe colletion'
           width={610}
           height={502}
           className='object-contain relative z-10'
-        />
+        /> */}
       </div>
     </div>
   )

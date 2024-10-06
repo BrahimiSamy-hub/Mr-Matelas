@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className='justify-center'>
         <NavLink to='/'>
           {/* <img src={yourlogo} alt='logo' className='' loading='lazy' /> */}
-          <h1 className='text-4xl font-extrabold'>Mister Matelas</h1>
+          <h1 className='text-4xl font-extrabold'>MrMatelas</h1>
         </NavLink>
       </div>
       <nav className='items-center justify-center hidden lg:flex'>
