@@ -89,11 +89,12 @@ const Cart = () => {
                                   <div className='ml-4 flex flex-1 flex-col'>
                                     <div>
                                       <div className='flex justify-between text-base font-medium mr-2'>
-                                        <h3>{t(product.name)}</h3>
+                                        <h3>{t(product.name)} </h3>
                                         <p className='ml-4'>
                                           {product.price}{' '}
                                           <small>
-                                            <sup>{t('devise')}</sup>
+                                            {' '}
+                                            <sup> {t('devise')}</sup>
                                           </small>
                                         </p>
                                       </div>

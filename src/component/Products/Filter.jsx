@@ -291,7 +291,7 @@ export default function App() {
                         />
                         <label
                           htmlFor='filter-mobile-all'
-                          className='ml-3 min-w-0 flex-1 text-gray-500'
+                          className='ml-3 mr-3 min-w-0 flex-1 text-gray-500'
                         >
                           All
                         </label>
@@ -310,7 +310,7 @@ export default function App() {
                           />
                           <label
                             htmlFor={`filter-mobile-${cat._id}`}
-                            className='ml-3 min-w-0 flex-1 text-gray-500'
+                            className='ml-3 mr-3 min-w-0 flex-1 text-gray-500'
                           >
                             {cat.frName}
                           </label>
@@ -385,7 +385,7 @@ export default function App() {
                         />
                         <label
                           htmlFor='filter-all'
-                          className='ml-3 text-sm text-gray-600'
+                          className='ml-3 mr-3 text-sm text-gray-600'
                         >
                           All
                         </label>
@@ -404,7 +404,7 @@ export default function App() {
                           />
                           <label
                             htmlFor={`filter-${cat._id}`}
-                            className='ml-3 text-sm text-gray-600'
+                            className='ml-3 mr-3 text-sm text-gray-600'
                           >
                             {cat.frName}
                           </label>
