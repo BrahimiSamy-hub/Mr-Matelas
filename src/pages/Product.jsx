@@ -66,6 +66,7 @@
 //                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-100 lg:aspect-none lg:w-full relative group-hover:scale-95 group duration-300 transition-transform'>
 //                       {/* First image */}
 //                       <img
+// draggable = 'false'
 //                         src={product.images.urls[0]}
 //                         alt={imageAlt}
 //                         className='h-[200px] w-full object-contain object-center lg:h-[200px] lg:w-full group-hover:scale-105 duration-150 transition-transform first-image'
@@ -73,6 +74,7 @@
 //                       />
 //                       {/* Second image for hover */}
 //                       <img
+// draggable = 'false'
 //                         src={product.images.urls[1]}
 //                         alt={imageAlt}
 //                         className='h-full w-full object-contain object-center lg:h-full lg:w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 hover-image'
@@ -191,6 +193,7 @@ const Product = () => {
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-100 lg:aspect-none lg:w-full relative group-hover:scale-95 group duration-300 transition-transform'>
                       {/* First image */}
                       <img
+                        draggable='false'
                         src={product.images.urls[0]}
                         alt={imageAlt}
                         className='h-[200px] w-full object-contain object-center lg:h-[200px] lg:w-full group-hover:scale-105 duration-150 transition-transform first-image'
@@ -198,6 +201,7 @@ const Product = () => {
                       />
                       {/* Second image for hover */}
                       <img
+                        draggable='false'
                         src={product.images.urls[1]}
                         alt={imageAlt}
                         className='h-full w-full object-contain object-center lg:h-full lg:w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 hover-image'
@@ -207,7 +211,10 @@ const Product = () => {
                     <div className='mt-2 flex justify-between'>
                       <div>
                         <h3 className='text-black'>
-                          <Link to={`/products/${product._id}`}>
+                          <Link
+                            to={`/products/${product._id}`}
+                            draggable='false'
+                          >
                             <span
                               aria-hidden='true'
                               className='absolute inset-0 dont-bold'

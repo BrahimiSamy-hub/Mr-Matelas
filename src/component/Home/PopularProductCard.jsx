@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const PopularProductCard = ({ _id, name, price, lastPrice }) => {
   return (
     <Link
+      draggable='false'
       to={`/products/${_id}`}
       key={_id}
       className='relative flex flex-1 flex-col w-full hover:scale-95 transition-transform duration-300 group justify-center items-center rounded-[20px] shadow-xl'
@@ -14,6 +15,7 @@ const PopularProductCard = ({ _id, name, price, lastPrice }) => {
       </div>
 
       <img
+        draggable='false'
         src={matelas}
         alt={name}
         className='w-[282px] h-[282px] object-contain group-hover:scale-110 transition-transform duration-700'

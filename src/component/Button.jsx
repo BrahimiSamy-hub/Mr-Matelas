@@ -8,7 +8,7 @@ const Button = ({
   fullWidth,
 }) => {
   return (
-    <Link to='/shop'>
+    <Link to='/shop' draggable='false'>
       <button
         className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none hover:opacity-75 hover:scale-105 transition-transform duration-500
       ${

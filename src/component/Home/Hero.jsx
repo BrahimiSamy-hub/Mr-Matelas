@@ -14,11 +14,14 @@ const Hero = () => {
         </p>
 
         <h1 className='mt-10 text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
-          <span className='xl:bg-white xl:whitespace-nowrap rounded-full relative z-10 pr-10'>
+          <span className='xl:bg-white xl:whitespace-nowrap rounded-full relative z-10 pr-6'>
             The New Arrival
           </span>
           <br />
-          <span className='text-blue-300 inline-block mt-3'>Nike</span> Shoes
+          <span className='text-6xl '>of </span>
+          <span className='text-blue-300 inline-block mt-5 xl:bg-white xl:whitespace-nowrap relative z-10 rounded-full pr-6 t'>
+            MATTRESSES
+          </span>
         </h1>
         <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'></p>
 
@@ -30,6 +33,7 @@ const Hero = () => {
         style={{ backgroundImage: `url(${hero})` }}
       >
         {/* <img
+            draggable='false'
           src={matelas}
           alt='shoe colletion'
           width={610}

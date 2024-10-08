@@ -410,7 +410,9 @@ const Checkout = () => {
                 {t('thankYou')}
               </p>
               <button className='border border-[#F17A28] p-2 rounded bg-[#F17A28] hover:opacity-75'>
-                <Link to='/shop'>{t('goBackToShop')}</Link>
+                <Link to='/shop' draggable='false'>
+                  {t('goBackToShop')}
+                </Link>
               </button>
             </div>
           ) : (

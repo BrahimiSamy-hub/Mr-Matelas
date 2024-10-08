@@ -55,8 +55,8 @@ const Navbar = () => {
   return (
     <div className='z-50 fixed flex w-full bg-white sm:px-16 px-8 justify-between  items-center shadow-sm min-h-20'>
       <div className='justify-center'>
-        <NavLink to='/'>
-          {/* <img src={yourlogo} alt='logo' className='' loading='lazy' /> */}
+        <NavLink to='/' draggable='false'>
+          {/* <img src={yourlogo} alt='logo' className='' loading='lazy'     draggable='false'/> */}
           <h1 className='text-4xl font-extrabold'>MrMatelas</h1>
         </NavLink>
       </div>
@@ -65,6 +65,7 @@ const Navbar = () => {
           {navigation.map((item) => (
             <li key={item.id} className='relative font-semibold group'>
               <NavLink
+                draggable='false'
                 to={item.url}
                 className={({ isActive }) =>
                   `relative ${

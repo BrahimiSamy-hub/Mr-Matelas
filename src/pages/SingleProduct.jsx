@@ -117,6 +117,7 @@ const SingleProduct = () => {
               <div className='flex flex-col'>
                 {selectedImage ? (
                   <img
+                    draggable='false'
                     src={selectedImage}
                     alt='Product image'
                     className={classNames(
@@ -137,6 +138,7 @@ const SingleProduct = () => {
                     <div className='mt-4 space-x-2 flex justify-around'>
                       {product.images.urls.map((url, index) => (
                         <img
+                          draggable='false'
                           key={index}
                           src={url}
                           alt={`${productName} ${index + 1}`}

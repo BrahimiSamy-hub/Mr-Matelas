@@ -55,7 +55,7 @@ const LanguageDropdown = () => {
               }`}
             >
               <h3>{label}</h3>
-              <img className='h-[20px]' src='' alt='' />
+              <img className='h-[20px]' src='' alt='' draggable='false' />
             </div>
           ))}
         </div>

@@ -325,7 +325,7 @@ export default function App() {
         </Dialog>
 
         <main className='max-w-7xl'>
-          <div className='flex items-baseline justify-between pb-6 mt-10'>
+          <div className='flex items-baseline justify-between mt-20'>
             <div className='text-4xl font-bold tracking-tight text-gray-900'></div>
 
             <div className='flex items-center'>
@@ -335,12 +335,15 @@ export default function App() {
                 className='-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden'
               >
                 <span className='sr-only'>Filters</span>
-                <FunnelIcon aria-hidden='true' className='h-5 w-5' />
+                <div className='flex gap-2 justify-center items-center '>
+                  <span className='font-bold text-2xl'>Filter</span>
+                  <FunnelIcon aria-hidden='true' className='h-10 w-10' />
+                </div>
               </button>
             </div>
           </div>
 
-          <div aria-labelledby='products-heading' className='pb-24 pt-6'>
+          <div aria-labelledby='products-heading' className='pb-24'>
             <h2 id='products-heading' className='sr-only'>
               Products
             </h2>
