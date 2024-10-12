@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { IoCartOutline } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
-import { yourlogo, MenuSvg } from '../assets'
+import { logo, MenuSvg, logoPng } from '../assets'
 import { navigation } from '../constant'
 import { useCart } from '../context/CartContext'
 import LanguageDropdown from './LanguageDropdown'
@@ -13,18 +13,11 @@ const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false)
 
   const toggleNavigation = () => {
-    if (openNavigation) {
-      setOpenNavigation(false)
-      enablePageScroll()
-    } else {
-      setOpenNavigation(true)
-      disablePageScroll()
-    }
+    setOpenNavigation(!openNavigation)
   }
 
   const handleClick = () => {
     if (!openNavigation) return
-    enablePageScroll()
     setOpenNavigation(false)
   }
 
@@ -48,72 +41,75 @@ const Navbar = () => {
     }
   }, [i18n])
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng)
-  }
-
   return (
-    <div className='z-50 fixed flex w-full bg-white sm:px-16 px-8 justify-between  items-center shadow-sm min-h-20'>
-      <div className='justify-center'>
-        <NavLink to='/' draggable='false'>
-          {/* <img src={yourlogo} alt='logo' className='' loading='lazy'     draggable='false'/> */}
-          <h1 className='text-4xl font-extrabold'>MrMatelas</h1>
-        </NavLink>
-      </div>
-      <nav className='items-center justify-center hidden lg:flex'>
-        <ul className='flex gap-10'>
+    <header className='xl:sm:pl-16 pl-8 wide:sm:pr-16 pr-8 fixed w-full bg-white shadow-md z-50'>
+      <div className='flex items-center justify-between'>
+        <div className='flex items-center'>
+          <NavLink to='/' draggable='false'>
+            <img
+              src={logoPng}
+              alt='logo'
+              className='w-full h-20 py-1'
+              loading='lazy'
+              draggable='false'
+            />
+          </NavLink>
+        </div>
+        <nav className='hidden lg:flex items-center gap-8'>
           {navigation.map((item) => (
-            <li key={item.id} className='relative font-semibold group'>
-              <NavLink
-                draggable='false'
-                to={item.url}
-                className={({ isActive }) =>
-                  `relative ${
-                    isActive
-                      ? 'text-black font-bold after:w-full '
-                      : 'text-black after:w-0'
-                  }
-                  after:absolute after:left-0 after:bottom-0  after:h-[2px] after:bg-black after:transition-all after:duration-300 group-hover:after:w-full`
-                }
-              >
-                {t(item.title)}
-              </NavLink>
-            </li>
+            <NavLink
+              key={item.id}
+              to={item.url}
+              className={({ isActive }) =>
+                `relative font-semibold text-lg transition duration-300 hover:text-[#0a62a5] uppercase ${
+                  isActive ? 'text-[#0a62a5] font-extrabold' : 'text-black'
+                }`
+              }
+            >
+              {t(item.title)}
+            </NavLink>
           ))}
-        </ul>
-      </nav>
-      <div className='flex items-center'>
-        {/* <div className='flex  mr-2 gap-2 ml-6'>
-          <button
-            onClick={() => changeLanguage('fr')}
-            className={`px-4 py-2 rounded-md ${
-              i18n.language === 'fr' ? 'bg-black text-white' : 'bg-gray-200'
-            }`}
-          >
-            FR
+        </nav>
+        <div className='flex items-center gap-6'>
+          <LanguageDropdown />
+          <button className='relative' onClick={toggleCart}>
+            <IoCartOutline
+              size={45}
+              color='0a62a5'
+              className=' font-extrabold hover:-rotate-12 hover:opacity-75 transition duration-300'
+            />
+            {totalItems > 0 && (
+              <span className='absolute -top-2 -right-3 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full'>
+                {totalItems}
+              </span>
+            )}
           </button>
-          <button
-            onClick={() => changeLanguage('ar')}
-            className={`px-4 py-2 rounded-md ${
-              i18n.language === 'ar' ? 'bg-black text-white' : 'bg-gray-200'
-            }`}
-          >
-            AR
+          <button className='lg:hidden' onClick={toggleNavigation}>
+            <MenuSvg openNavigation={openNavigation} />
           </button>
-        </div> */}
-        <LanguageDropdown />
-        <button className='ml-6 mr-2 relative lg:flex' onClick={toggleCart}>
-          <IoCartOutline size={40} />
-          <span className='absolute -top-2 -right-3 flex items-center justify-center w-6 h-6 font-bold text-white bg-black rounded-full '>
-            <h6 className='mb-0.5'>{totalItems}</h6>
-          </span>
-        </button>
-
-        <div className='ml-auto lg:hidden' onClick={toggleNavigation}>
-          <MenuSvg openNavigation={openNavigation} />
         </div>
       </div>
-    </div>
+      {openNavigation && (
+        <div className='lg:hidden'>
+          <ul className='flex flex-col items-center gap-6 py-6'>
+            {navigation.map((item) => (
+              <li key={item.id} onClick={handleClick}>
+                <NavLink
+                  to={item.url}
+                  className={({ isActive }) =>
+                    `block text-lg font-medium transition duration-300 hover:text-[#0a62a5]  uppercase ${
+                      isActive ? 'text-[#0a62a5] font-extrabold' : 'text-black'
+                    }`
+                  }
+                >
+                  {t(item.title)}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </header>
   )
 }
 

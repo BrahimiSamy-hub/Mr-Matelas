@@ -24,7 +24,7 @@ const PopularProductCard = ({ _id, name, price, lastPrice }) => {
         {name}
       </h3>
 
-      <p className='mt-2 font-semibold font-montserrat text-blue-300 text-xl leading-normal'>
+      <p className='mt-2 font-semibold font-montserrat text-[#0a62a5] text-xl leading-normal'>
         {price === lastPrice ? (
           <>
             {price}

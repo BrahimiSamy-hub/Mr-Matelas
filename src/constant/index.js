@@ -10,6 +10,7 @@ import {
 import shield from '../assets/shield-tick.svg'
 import support from '../assets/support.svg'
 import truck from '../assets/truck-fast.svg'
+import { useTranslation } from 'react-i18next'
 
 export const products = [
   {
@@ -55,18 +56,18 @@ export const navigation = [
 export const services = [
   {
     imgURL: truck,
-    label: 'Free shipping',
-    subtext: 'Enjoy seamless shopping with our complimentary shipping service.',
+    labelKey: 'services.freeShipping.label',
+    subtextKey: 'services.freeShipping.subtext',
   },
+
   {
     imgURL: shield,
-    label: 'Secure Payment',
-    subtext:
-      'Experience worry-free transactions with our secure payment options.',
+    labelKey: 'services.securePayment.label',
+    subtextKey: 'services.securePayment.subtext',
   },
   {
     imgURL: support,
-    label: 'Love to help you',
-    subtext: 'Our dedicated team is here to assist you every step of the way.',
+    labelKey: 'services.help.label',
+    subtextKey: 'services.help.subtext',
   },
 ]

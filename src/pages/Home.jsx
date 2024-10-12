@@ -2,6 +2,7 @@ import Hero from '../component/Home/Hero'
 import PopularProducts from '../component/Home/PopularProducts'
 import SpecialOffer from '../component/Home/SpecialOffer'
 import Services from '../component/Home/Services'
+import Footer from '../component/Footer'
 const Home = () => {
   return (
     <div className='min-h-screen'>
@@ -17,6 +18,7 @@ const Home = () => {
       <div className='sm:px-16 px-8 py-10'>
         <Services />
       </div>
+      <Footer />
     </div>
   )
 }

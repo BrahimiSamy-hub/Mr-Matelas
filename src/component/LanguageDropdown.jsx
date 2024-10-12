@@ -35,14 +35,14 @@ const LanguageDropdown = () => {
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className='bg-white p-2 w-[50px] flex items-center justify-between
-                   font-bold text-l rounded-lg tracking-wider border-[2px] border-[#242323c0]
+                   font-bold text-l rounded-lg tracking-wider border-[2px] border-black
                    duration-300 active:text-white'
       >
         <MdLanguage />
         {!isOpen ? <IoMdArrowDropdown /> : <IoMdArrowDropup />}
       </button>
       {isOpen && (
-        <div className='bg-white absolute top-[50px] w-[120px] flex flex-col items-start rounded-lg p-1 shadow-lg'>
+        <div className='bg-white absolute top-[40px] w-[100px]  flex flex-col border items-start rounded-lg shadow-lg'>
           {languages.map(({ code, label }) => (
             <div
               key={code}
@@ -50,12 +50,12 @@ const LanguageDropdown = () => {
                 i18n.changeLanguage(code)
                 setIsOpen(false)
               }}
-              className={`flex w-full items-center justify-between px-2 hover:bg-gray-300 cursor-pointer rounded-l border-l-transparent ${
-                i18n.language === code ? 'bg-[#242323c0] text-white' : ''
+              className={`flex w-full items-center justify-between px-2 hover:bg-gray-300 p-2 cursor-pointer border-l-transparent ${
+                i18n.language === code ? 'bg-[#0a62a5] text-white' : ''
               }`}
             >
               <h3>{label}</h3>
-              <img className='h-[20px]' src='' alt='' draggable='false' />
+              <img className='h-[20px]' src='' alt='ds' draggable='false' />
             </div>
           ))}
         </div>

@@ -6,13 +6,13 @@ const About = () => {
 
   return (
     <>
-      <section className='py-10'>
+      <section className='min-h-screen xl:sm:pl-16 pl-8 wide:sm:pr-16 pr-8 sm:pb-24 pb-12 '>
         <div className='mt-16 gap-20 flex flex-col h-[540px] md:flex-row'>
           <div className='flex flex-col'>
             <h2 className='text-4xl font-palanquin font-bold'>
-              <span className='text-blue-300'> Mr </span> Matelas
+              {t('about.title')}
             </h2>
-            <div className='w-[260px] h-1 bg-blue-300 mt-2 mb-4'></div>
+            <div className='w-[260px] h-1 bg-[#0a62a5] mt-2 mb-4'></div>
             <p className='leading-8 mt-4 w-[800px] font-montserrat text-lg text-[#464545]'>
               {t('about.description')}
             </p>

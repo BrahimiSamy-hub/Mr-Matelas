@@ -10,8 +10,12 @@ import oreiller from './product/oreiller.jpg'
 import oreiler from './product/oreiller.webp'
 import sommier from './product/sommier.webp'
 import sommiler from './product/sommiler.webp'
+import logo from '../assets/logo.svg'
+import logoPng from '../assets/logo.png'
 
 export {
+  logoPng,
+  logo,
   MenuSvg,
   oreiller,
   chevron,

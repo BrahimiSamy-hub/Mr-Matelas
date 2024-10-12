@@ -8,9 +8,46 @@
   "shop_by_categories": "Acheter par catégories",
 
   "about": {
-    "title": "Mister Matelas",
+    "title": "Notre Histoire",
     "description": "Jusqu’à 10 ans de garantie Nous croyons en la qualité de nos produits et souhaitons vous procurer une tranquillité d’esprit totale en vous offrant cette garantie exceptionnelle. Aucun doute sur la durabilité des produits Atlas. C’est pourquoi la majorité de nos matelas sont garantis 10 ans. De quoi profiter de nos nombreuses années d’expérience en matière de confort. 60 ans d’expérience dans le domaine du sommeil Pionniers dans notre secteur d’activité par un savoir-faire datant des années soixante, nous proposons un large éventail de produits (Matelas, Lit, Linge de lit). En plus d’une gamme de produits dédiée aux professionnels (hôtels, résidences et collectivités…) qui nous permet d’équiper ou de renouveler le type de literie de nos clients. (segment moyen à haut de gamme). Rapport qualité-prix Atlas vous propose des solutions de haute qualité, notre maîtrise des processus munie de notre savoir-faire, nous permet de vous offrir un rapport qualité/prix imbattable et une diversité de produit qui correspond à différents budgets .",
     "mapTitle": "Localisation"
+  },
+
+  "hero": {
+    "products": "Nos nouveaux produits",
+    "newArrival": "La Nouvelle Arrivée",
+    "of": "De",
+    "mattresses": "MATELAS",
+    "button": "Découvrez-le"
+  },
+
+  "specialOffer": {
+    "title1": "Offre",
+    "title2": "Spéciale",
+    "description1": "Embarquez pour une expérience de shopping qui redéfinit votre expérience avec des offres imbattables. Des sélections de premier ordre aux économies incroyables, nous offrons une valeur inégalée qui nous distingue.",
+    "description2": "Explorez un royaume de possibilités conçu pour satisfaire vos désirs uniques, dépassant les attentes les plus élevées. Votre voyage avec nous est tout simplement exceptionnel.",
+    "button": "Achetez maintenant",
+    "altText": "Promotion des chaussures"
+  },
+  "popularProducts": {
+    "title1": "Nos",
+    "title2": "Produits Plus récents",
+    "description": "Découvrez une qualité et un style de premier ordre avec nos sélections les plus recherchées. Découvrez un monde de confort, de design et de valeur."
+  },
+
+  "services": {
+    "freeShipping": {
+      "label": "Livraison gratuite",
+      "subtext": "Profitez d'une expérience d'achat fluide avec notre service de livraison gratuit."
+    },
+    "securePayment": {
+      "label": "Paiement sécurisé",
+      "subtext": "Bénéficiez de transactions sans souci grâce à nos options de paiement sécurisées."
+    },
+    "help": {
+      "label": "Nous aimons vous aider",
+      "subtext": "Notre équipe dédiée est là pour vous accompagner à chaque étape."
+    }
   },
   "productsFound": "{{count}} Produit(s) trouvé(s)",
 

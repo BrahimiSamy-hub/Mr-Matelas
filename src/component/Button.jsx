@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { FaCircleArrowRight } from 'react-icons/fa6'
+import { FaCircleArrowRight, FaCircleArrowLeft } from 'react-icons/fa6'
+import { useTranslation } from 'react-i18next'
+
 const Button = ({
   label,
   backgroundColor,
@@ -7,6 +9,9 @@ const Button = ({
   borderColor,
   fullWidth,
 }) => {
+  const { i18n } = useTranslation()
+  const isArabic = i18n.language === 'ar' // Check if the current language is Arabic
+
   return (
     <Link to='/shop' draggable='false'>
       <button
@@ -14,12 +19,17 @@ const Button = ({
       ${
         backgroundColor
           ? `${backgroundColor} ${textColor} ${borderColor}`
-          : 'bg-blue-300 text-white border-coral-red'
+          : 'bg-[#0a62a5] text-white border-coral-red'
       } rounded-full ${fullWidth && 'w-full'}`}
       >
         {label}
 
-        <FaCircleArrowRight size={22} />
+        {/* Conditionally render the correct arrow icon */}
+        {isArabic ? (
+          <FaCircleArrowLeft size={22} />
+        ) : (
+          <FaCircleArrowRight size={22} />
+        )}
       </button>
     </Link>
   )

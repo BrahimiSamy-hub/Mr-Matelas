@@ -6,9 +6,47 @@
   "shop_by_categories": "Shop by categories",
 
   "about": {
-    "title": "Mister Matelas",
+    "title": "Our Story",
     "description": "Up to 10 years of warranty. We believe in the quality of our products and wish to provide you with complete peace of mind by offering you this exceptional warranty. No doubt about the durability of Atlas products. That's why the majority of our mattresses are guaranteed for 10 years, so you can benefit from our many years of experience in comfort. 60 years of experience in the field of sleep. Pioneers in our industry with expertise dating back to the 1960s, we offer a wide range of products (Mattresses, Beds, Bed Linen), in addition to a range of products dedicated to professionals (hotels, residences, and communities), which allows us to equip or renew the bedding of our clients (mid to high-end segment). Value for money: Atlas offers you high-quality solutions; our mastery of processes combined with our expertise allows us to offer you unbeatable value for money and a variety of products that correspond to different budgets.",
     "mapTitle": "Location"
+  },
+
+  "hero": {
+    "products": "Our new products",
+    "newArrival": "The New Arrival",
+    "of": "Of",
+    "mattresses": "MATTRESSES",
+    "button": "Check it out"
+  },
+
+  "popularProducts": {
+    "title1": "Our",
+    "title2": "Newest Products",
+    "description": "Experience top-notch quality and style with our sought-after selections. Discover a world of comfort, design, and value."
+  },
+
+  "specialOffer": {
+    "title1": "Special",
+    "title2": "Offer",
+    "description1": "Embark on a shopping journey that redefines your experience with unbeatable deals. From premier selections to incredible savings, we offer unparalleled value that sets us apart.",
+    "description2": "Navigate a realm of possibilities designed to fulfill your unique desires, surpassing the loftiest expectations. Your journey with us is nothing short of exceptional.",
+    "button": "Shop now",
+    "altText": "Shoe Promotion"
+  },
+
+  "services": {
+    "freeShipping": {
+      "label": "Free Shipping",
+      "subtext": "Enjoy seamless shopping with our complimentary shipping service."
+    },
+    "securePayment": {
+      "label": "Secure Payment",
+      "subtext": "Experience worry-free transactions with our secure payment options."
+    },
+    "help": {
+      "label": "Love to Help You",
+      "subtext": "Our dedicated team is here to assist you every step of the way."
+    }
   },
   "productsFound": "{{count}} Product(s) found",
 
