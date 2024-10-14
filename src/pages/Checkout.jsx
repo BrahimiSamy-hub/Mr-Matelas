@@ -560,7 +560,7 @@ const Checkout = () => {
 
               <button
                 type='submit'
-                className='w-full py-3 bg-black text-white font-semibold rounded-md hover:opacity-75'
+                className='w-full py-3 bg-[#0a62a5] text-white font-semibold rounded-md hover:opacity-75'
                 disabled={isLoading || cartItems.length === 0}
                 onClick={() => setIsOrderSuccessful(true)} // Set isOrderSuccessful to true
               >

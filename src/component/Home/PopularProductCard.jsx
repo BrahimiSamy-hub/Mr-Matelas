@@ -10,7 +10,7 @@ const PopularProductCard = ({ _id, name, price, lastPrice }) => {
       className='relative flex flex-1 flex-col w-full hover:scale-95 transition-transform duration-300 group justify-center items-center rounded-[20px] shadow-xl'
     >
       {/* Red label in the top-right corner */}
-      <div className='absolute top-5 right-0 bg-red-500 text-white text-md px-2 py-1 rounded-[20px] z-10'>
+      <div className='absolute top-5 right-0 bg-red-500 text-white text-md px-2 py-1 rounded-tr-[20px] rounded-bl-[20px] z-10'>
         New!
       </div>
 
@@ -24,7 +24,7 @@ const PopularProductCard = ({ _id, name, price, lastPrice }) => {
         {name}
       </h3>
 
-      <p className='mt-2 font-semibold font-montserrat text-[#0a62a5] text-xl leading-normal'>
+      <p className='my-2 font-semibold font-montserrat text-[#0a62a5] text-xl leading-normal'>
         {price === lastPrice ? (
           <>
             {price}

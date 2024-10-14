@@ -37,7 +37,7 @@ const Product = () => {
 
   return (
     <>
-      <section>
+      <section className='xl:sm:pl-16 pl-8 wide:sm:pr-16 pr-8 sm:pb-24 pb-12'>
         <Filter />
       </section>
       <Footer />

@@ -157,7 +157,7 @@ const Cart = () => {
                           <Link
                             draggable='false'
                             to='/checkout'
-                            className='flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:opacity-75'
+                            className='flex items-center justify-center rounded-md border border-transparent bg-[#0a62a5] px-6 py-3 text-base font-medium text-white shadow-sm hover:opacity-75'
                             onClick={toggleCart}
                           >
                             {t('checkout')}
@@ -169,7 +169,7 @@ const Cart = () => {
                             <Link to='/' draggable='false'>
                               <button
                                 type='button'
-                                className='font-medium text-color-1 hover:opacity-75'
+                                className='font-medium text-color-1 hover:text-[#0a62a5]'
                                 onClick={toggleCart}
                               >
                                 {t('continueShopping')}
