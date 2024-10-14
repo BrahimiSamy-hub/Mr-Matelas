@@ -9,32 +9,34 @@ const Hero = () => {
   return (
     <div
       id='home'
-      className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container'
+      className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10'
     >
-      <div className='relative xl:w-3/5 flex flex-col justify-center font-semibold items-start w-full pt-28'>
+      <div className='relative xl:w-2/5 flex flex-col justify-center font-semibold items-start w-full pt-28'>
         <p className='text-xl font-montserrat text-[#0a62a5]'>
           {t('hero.products')}
         </p>
 
-        <h1 className='mt-10 text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
+        <h1 className='mt-10 text-8xl max-sm:text-[50px] max-sm:leading-[75px] font-bold'>
           <span
-            className={` xl:whitespace-nowrap rounded-full relative z-10 ${
+            className={` xl:whitespace-nowrap bg-white rounded-full relative z-10 ${
               isRTL ? 'pl-6' : 'pr-6'
             }`}
           >
             {t('hero.newArrival')}
           </span>
           <br />
-          <span className='text-8xl '>{t('hero.of')} </span>
+          <span className='text-8xl max-sm:text-[50px]  max-sm:leading-[75px]'>
+            {t('hero.of')}{' '}
+          </span>
           <span
-            className={`text-[#0a62a5] inline-block mt-5  xl:whitespace-nowrap relative z-10 rounded-full ${
+            className={`text-[#0a62a5] inline-block bg-white xl:whitespace-nowrap relative z-10 rounded-full ${
               isRTL ? 'pl-6' : 'pr-6'
             }`}
           >
             {t('hero.mattresses')}
           </span>
         </h1>
-        <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'></p>
+        <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-10 sm:max-w-sm'></p>
 
         <Button label={t('hero.button')} />
       </div>
