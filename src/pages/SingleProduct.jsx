@@ -109,7 +109,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <section>
+      <section className='xl:sm:pl-16 pl-6 wide:sm:pr-16 pr-6 sm:pb-24 pb-12'>
         <div className='flex w-full items-center overflow-hidden bg-white pt-14'>
           <div className='grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8'>
             {/* Image Gallery */}

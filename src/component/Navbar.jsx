@@ -72,14 +72,17 @@ const Navbar = () => {
         </nav>
         <div className='flex items-center gap-6'>
           <LanguageDropdown />
-          <button className='relative' onClick={toggleCart}>
+          <button
+            className='relative hover:-rotate-12 hover:opacity-75 transition duration-300'
+            onClick={toggleCart}
+          >
             <IoCartOutline
               size={45}
               color='0a62a5'
-              className=' font-extrabold hover:-rotate-12 hover:opacity-75 transition duration-300'
+              className=' font-extrabold '
             />
             {totalItems > 0 && (
-              <span className='absolute -top-2 -right-3 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full'>
+              <span className='absolute -top-1 -right-2 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-[#0a62a5] rounded-full'>
                 {totalItems}
               </span>
             )}

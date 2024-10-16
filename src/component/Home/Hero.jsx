@@ -25,7 +25,7 @@ const Hero = () => {
             {t('hero.newArrival')}
           </span>
           <br />
-          <span className='text-8xl max-sm:text-[50px]  max-sm:leading-[75px]'>
+          <span className='text-8xl max-sm:text-[50px] max-sm:leading-[75px]'>
             {t('hero.of')}{' '}
           </span>
           <span
@@ -42,7 +42,7 @@ const Hero = () => {
       </div>
 
       <div
-        className='relative flex-1 flex justify-center  items-center xl:min-h-screen max-xl:py-40 bg-cover h-screen bg-center bg-no-repeat'
+        className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-contain h-screen bg-center bg-no-repeat'
         style={{ backgroundImage: `url(${hero})` }}
       ></div>
     </div>

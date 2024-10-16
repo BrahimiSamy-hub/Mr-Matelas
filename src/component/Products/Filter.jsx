@@ -164,7 +164,7 @@
 //                             type='radio'
 //                             id={`filter-${category._id}`}
 //                             name='category'
-//                             className='h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'
+//                             className='h-4 w-4 rounded border-gray-300 text-[#0a62a5] focus:ring-[#0a62a5]'
 //                             onChange={() => handleCategoryChange(category._id)} // Set category ID on change
 //                           />
 //                           <label
@@ -285,7 +285,7 @@ export default function App() {
                           type='radio'
                           id='filter-mobile-all'
                           name='category'
-                          className='h-4 w-4 rounded border-gray-300 text-black focus:ring-black'
+                          className='h-4 w-4 rounded border-gray-300 text-[#0a62a5] focus:ring-[#0a62a5]'
                           onChange={() => handleCategoryChange('all')} // Handle the "All" selection
                           checked={category === ''} // Checked if category is empty (all)
                         />
@@ -304,7 +304,7 @@ export default function App() {
                             type='radio'
                             id={`filter-mobile-${cat._id}`}
                             name='category'
-                            className='h-4 w-4 rounded border-gray-300 text-black focus:ring-black'
+                            className='h-4 w-4 rounded border-gray-300 text-[#0a62a5] focus:ring-[#0a62a5]'
                             onChange={() => handleCategoryChange(cat._id)} // Set the category when clicked
                             checked={cat._id === category} // Controlled input
                           />
@@ -382,7 +382,7 @@ export default function App() {
                           type='radio'
                           id='filter-all'
                           name='category'
-                          className='h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'
+                          className='h-4 w-4 rounded border-gray-300 text-[#0a62a5] focus:ring-[#0a62a5]'
                           onChange={() => handleCategoryChange('all')} // Handle the "All" selection
                           checked={category === ''} // Checked if category is empty (all)
                         />
@@ -401,7 +401,7 @@ export default function App() {
                             type='radio'
                             id={`filter-${cat._id}`}
                             name='category'
-                            className='h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500'
+                            className='h-4 w-4 rounded border-gray-300 text-[#0a62a5] focus:ring-[#0a62a5]'
                             onChange={() => handleCategoryChange(cat._id)} // Set category ID on change
                             checked={cat._id === category} // Controlled input
                           />
