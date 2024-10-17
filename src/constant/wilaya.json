@@ -1,62 +1,874 @@
 {
   "wilayas": [
-    "1 - ADRAR",
-    "2 - CHLEF",
-    "3 - LAGHOUAT",
-    "4 - OUM EL BOUAGHI",
-    "5 - BATNA",
-    "6 - BEJAIA",
-    "7 - BISKRA",
-    "8 - BECHAR",
-    "9 - BLIDA",
-    "10 - BOUIRA",
-    "11 - TAMANRASSET",
-    "12 - TEBESSA",
-    "13 - TLEMCEN",
-    "14 - TIARET",
-    "15 - TIZI-OUZOU",
-    "16 - ALGER",
-    "17 - DJELFA",
-    "18 - JIJEL",
-    "19 - SETIF",
-    "20 - SAIDA",
-    "21 - SKIKDA",
-    "22 - SIDI BEL-ABBES",
-    "23 - ANNABA",
-    "24 - GUELMA",
-    "25 - CONSTANTINE",
-    "26 - MEDEA",
-    "27 - MOSTAGANEM",
-    "28 - M’SILA",
-    "29 - MASCARA",
-    "30 - OUARGLA",
-    "31 - ORAN",
-    "32 - EL BAYADH",
-    "33 - ILLIZI",
-    "34 - BORDJ BOU ARRERIDJ",
-    "35 - BOUMERDES",
-    "36 - EL TARF",
-    "37 - TINDOUF",
-    "38 - TISSEMSILT",
-    "39 - EL OUED",
-    "40 - KHENCHLA",
-    "41 - SOUK AHRAS",
-    "42 - TIPAZA",
-    "43 - MILA",
-    "44 - AIN DEFLA",
-    "45 - NAAMA",
-    "46 - AIN TEMOUCHENT",
-    "47 - GHARDAIA",
-    "48 - RELIZANE",
-    "49 - TIMIMOUN",
-    "50 - BORDJ BADJI MOKHTAR",
-    "51 - OULED DJELLAL",
-    "52 - BENI ABBES",
-    "53 - IN SALAH",
-    "54 - IN GUEZZAM",
-    "55 - TOUGGOURT",
-    "56 - DJANET",
-    "57 - EL MGHAIER",
-    "58 - EL MENIAA"
+    {
+      "name": "1 - ADRAR",
+      "communes": [
+        "Adrar",
+        "Zaouiet Kounta",
+        "Reggane",
+        "Aoulef",
+        "Tamentit",
+        "Timimoun",
+        "Charouine",
+        "Fenoughil",
+        "In Zghmir",
+        "In Belbel"
+      ]
+    },
+    {
+      "name": "2 - CHLEF",
+      "communes": [
+        "Chlef",
+        "El Karimia",
+        "Beni Haoua",
+        "Tenes",
+        "Oued Fodda",
+        "El Marsa",
+        "Abou El Hassan",
+        "Bouzeghaia",
+        "Ouled Fares",
+        "Zeboudja"
+      ]
+    },
+    {
+      "name": "3 - LAGHOUAT",
+      "communes": [
+        "Laghouat",
+        "Aflou",
+        "Hassi R'Mel",
+        "Brida",
+        "Gueltat Sidi Saad",
+        "Sebgag",
+        "Sidi Makhlouf",
+        "Tadjrouna",
+        "Aïn Madhi",
+        "El Ghicha"
+      ]
+    },
+    {
+      "name": "4 - OUM EL BOUAGHI",
+      "communes": [
+        "Oum El Bouaghi",
+        "Aïn Babouche",
+        "Aïn Beida",
+        "Fkirina",
+        "Sigus",
+        "Aïn M'Lila",
+        "Souk Naamane",
+        "Meskiana",
+        "Dhalaa",
+        "Ouled Gacem"
+      ]
+    },
+    {
+      "name": "5 - BATNA",
+      "communes": [
+        "Batna",
+        "Barika",
+        "Arris",
+        "Tazoult",
+        "N'Gaous",
+        "Merouana",
+        "Timgad",
+        "Bouzina",
+        "Ichmoul",
+        "Seriana"
+      ]
+    },
+    {
+      "name": "6 - BEJAIA",
+      "communes": [
+        "Bejaia",
+        "Tichy",
+        "Amizour",
+        "El Kseur",
+        "Akbou",
+        "Souk El Tenine",
+        "Adekar",
+        "Sidi Aich",
+        "Tazmalt",
+        "Kherrata"
+      ]
+    },
+    {
+      "name": "7 - BISKRA",
+      "communes": [
+        "Biskra",
+        "Tolga",
+        "El-Kantara",
+        "Ouled Djellal",
+        "Sidi Khaled",
+        "Doucen",
+        "Oumache",
+        "Aïn Naga",
+        "Lioua",
+        "El Haouch"
+      ]
+    },
+    {
+      "name": "8 - BECHAR",
+      "communes": [
+        "Bechar",
+        "Beni Abbes",
+        "Kerzaz",
+        "Taghit",
+        "Igli",
+        "Ouled Khoudir",
+        "El Ouata",
+        "Abadla",
+        "Erg Ferradj",
+        "Timoudi"
+      ]
+    },
+    {
+      "name": "9 - BLIDA",
+      "communes": [
+        "Blida",
+        "Boufarik",
+        "Bougara",
+        "Chréa",
+        "El Affroun",
+        "Meftah",
+        "Oued Djer",
+        "Soumaa",
+        "Bouarfa",
+        "Mouzaïa"
+      ]
+    },
+    {
+      "name": "10 - BOUIRA",
+      "communes": [
+        "Bouira",
+        "Lakhdaria",
+        "Sour El Ghozlane",
+        "Haizer",
+        "Aïn Bessem",
+        "El Hachimia",
+        "Bir Ghbalou",
+        "El Asnam",
+        "Taghzout",
+        "Aomar"
+      ]
+    },
+    {
+      "name": "11 - TAMANRASSET",
+      "communes": [
+        "Tamanrasset",
+        "In Salah",
+        "In Guezzam",
+        "Tamanghasset",
+        "Tazrouk",
+        "Adrar",
+        "Tamanrasset",
+        "In Salah",
+        "Foggaret Ezzouaria",
+        "Foggaret El Amir"
+      ]
+    },
+    {
+      "name": "12 - TEBESSA",
+      "communes": [
+        "Tebessa",
+        "El Ogla",
+        "Bir El Ater",
+        "Cheria",
+        "El Meridj",
+        "Morsott",
+        "El Aurassi",
+        "Foussana",
+        "Derrag",
+        "Ghazoua"
+      ]
+    },
+    {
+      "name": "13 - TLEMCEN",
+      "communes": [
+        "Tlemcen",
+        "Maghnia",
+        "Beni Snous",
+        "Sidi M'Hamed",
+        "Boudaroua",
+        "Beni Ouarsous",
+        "El Araicha",
+        "Nedroma",
+        "Ain Kebira",
+        "Hennaya"
+      ]
+    },
+    {
+      "name": "14 - TIARET",
+      "communes": [
+        "Tiaret",
+        "Mahdia",
+        "Mekla",
+        "Mansourah",
+        "M'daourouch",
+        "Ras El Oued",
+        "Ain El Hadjel",
+        "Ain Dzarit",
+        "Tissemsilt",
+        "Beni Mered"
+      ]
+    },
+    {
+      "name": "15 - TIZI-OUZOU",
+      "communes": [
+        "Tizi Ouzou",
+        "Azazga",
+        "Ait Smaïl",
+        "Makouda",
+        "Beni Douala",
+        "Iferhounene",
+        "Tizi Rached",
+        "Ouaguenoun",
+        "Bouhinoun",
+        "Ain El Hammam"
+      ]
+    },
+    {
+      "name": "16 - ALGER",
+      "communes": [
+        "Alger",
+        "El Harrach",
+        "Kouba",
+        "Bir Mourad Raïs",
+        "Belouizdad",
+        "El Madania",
+        "Bir Mourad Raïs",
+        "Belouizdad",
+        "Bab El Oued",
+        "El Madania"
+      ]
+    },
+    {
+      "name": "17 - DJELFA",
+      "communes": [
+        "Djelfa",
+        "Ksar el Boukhari",
+        "El Guettar",
+        "Ain El Ibel",
+        "Mansourah",
+        "Birine",
+        "Messaoud",
+        "Ain Chikh",
+        "Sidi Bouzid",
+        "Ain Ouessara"
+      ]
+    },
+    {
+      "name": "18 - JIJEL",
+      "communes": [
+        "Jijel",
+        "El Milia",
+        "Tamalate",
+        "Bordj El Emir Abdelkader",
+        "Sidi Abdelaziz",
+        "Taza",
+        "Chekfa",
+        "Khalouia",
+        "Khalouia",
+        "Djendjen"
+      ]
+    },
+    {
+      "name": "19 - SETIF",
+      "communes": [
+        "Setif",
+        "El Eulma",
+        "Ain Arnat",
+        "Ain Lahdjer",
+        "Bir El Ater",
+        "Bordj Bou Arreridj",
+        "Beni Ourtilane",
+        "Djemila",
+        "Sidi Bouzid",
+        "Mekhadma"
+      ]
+    },
+    {
+      "name": "20 - SAIDA",
+      "communes": [
+        "Saida",
+        "Ain El Hadjel",
+        "Ain Skhouna",
+        "Beni Slimane",
+        "El Hassasna",
+        "Boualem",
+        "Moulay Larbi",
+        "Khenchela",
+        "Ain Ezzara",
+        "Khadra"
+      ]
+    },
+    {
+      "name": "21 - SKIKDA",
+      "communes": [
+        "Skikda",
+        "El Harrouch",
+        "Beni Azziz",
+        "Ain Zouit",
+        "Tamalous",
+        "Kendira",
+        "Tigzirt",
+        "Tebessa",
+        "El Eulma",
+        "Tobruk"
+      ]
+    },
+    {
+      "name": "22 - SIDI BEL-ABBES",
+      "communes": [
+        "Sidi Bel Abbes",
+        "El Hadjar",
+        "Sidi Ali",
+        "Ain El Kebira",
+        "Mansourah",
+        "El Amria",
+        "Ain Fares",
+        "Sidi Ali",
+        "El Karimia",
+        "Sidi Aich"
+      ]
+    },
+    {
+      "name": "23 - ANNABA",
+      "communes": [
+        "Annaba",
+        "El Hadjar",
+        "Berrahal",
+        "Ain El Berda",
+        "El Eulma",
+        "Sidi Amar",
+        "Khalouia",
+        "Ain M'lila",
+        "El Miliya",
+        "Kendira"
+      ]
+    },
+    {
+      "name": "24 - GUELMA",
+      "communes": [
+        "Guelma",
+        "El Mahmal",
+        "Hammam Debagh",
+        "Ain Merane",
+        "Belkhir",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "Ouled Kaddour",
+        "Tazoult",
+        "Gueltat Sidi Saad"
+      ]
+    },
+    {
+      "name": "25 - CONSTANTINE",
+      "communes": [
+        "Constantine",
+        "El Khroub",
+        "Didouche Mourad",
+        "Mila",
+        "Zighoud Youcef",
+        "Ain Abid",
+        "Ain Smara",
+        "Bordj Bou Arreridj",
+        "Ain El Kebira",
+        "Bordj Bou Arreridj"
+      ]
+    },
+    {
+      "name": "26 - MEDEA",
+      "communes": [
+        "Medea",
+        "Bir Mourad Raïs",
+        "Berrouaghia",
+        "Bordj Zemoura",
+        "El Attaf",
+        "Makhouda",
+        "El Amria",
+        "Mansourah",
+        "Bordj Bou Arreridj",
+        "Sidi Ali"
+      ]
+    },
+    {
+      "name": "27 - MOSTAGANEM",
+      "communes": [
+        "Mostaganem",
+        "Ain Sefra",
+        "Kalaat El Hamra",
+        "Khalouia",
+        "Sidi Ali",
+        "Bouguirat",
+        "Bordj Bou Arreridj",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid"
+      ]
+    },
+    {
+      "name": "28 - M’SILA",
+      "communes": [
+        "M'Sila",
+        "Mekhadma",
+        "Ain El Hadjel",
+        "Ain El Ghaouat",
+        "Mansourah",
+        "Bir El Ater",
+        "El Amria",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila"
+      ]
+    },
+    {
+      "name": "29 - MASCARA",
+      "communes": [
+        "Mascara",
+        "Ain Fares",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "Oued El Abtal",
+        "Bouguirat",
+        "Khalouia",
+        "El Miliya",
+        "El Amria",
+        "Mansourah"
+      ]
+    },
+    {
+      "name": "30 - OUARGLA",
+      "communes": [
+        "Ouargla",
+        "Hassi Messaoud",
+        "Ain El Beida",
+        "El Ouata",
+        "Djanet",
+        "Touggourt",
+        "Bordj Bou Arreridj",
+        "Kendira",
+        "Khenchela",
+        "Oum El Bouaghi"
+      ]
+    },
+    {
+      "name": "31 - ORAN",
+      "communes": [
+        "Oran",
+        "Ain El Turck",
+        "Es Senia",
+        "Bir El Djir",
+        "El Hassi",
+        "Mers El Kebir",
+        "Oued Tlélat",
+        "Sidi El Houari",
+        "Arzew",
+        "El Hadjar"
+      ]
+    },
+    {
+      "name": "32 - EL BAYADH",
+      "communes": [
+        "El Bayadh",
+        "Ksar El Boukhari",
+        "Bir El Ater",
+        "Ain El Hadjel",
+        "El Amria",
+        "Sidi Ali",
+        "Tissemsilt",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila"
+      ]
+    },
+    {
+      "name": "33 - ILLIZI",
+      "communes": [
+        "Illizi",
+        "Djanet",
+        "In Salah",
+        "Tamanrasset",
+        "El Ménia",
+        "Hassi Messaoud",
+        "Bordj Bou Arreridj",
+        "Kendira",
+        "Khenchela",
+        "El Amria"
+      ]
+    },
+    {
+      "name": "34 - BORDJ BOU ARRERIDJ",
+      "communes": [
+        "Bordj Bou Arreridj",
+        "Ain El Hadjel",
+        "Bir El Ater",
+        "Oued El Abtal",
+        "Sidi Ali",
+        "El Amria",
+        "Kendira",
+        "Khenchela",
+        "Djemila",
+        "M'sila"
+      ]
+    },
+    {
+      "name": "35 - BOUMERDES",
+      "communes": [
+        "Boumerdès",
+        "Khemis El Khechna",
+        "Bordj El Bahri",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria"
+      ]
+    },
+    {
+      "name": "36 - EL TARF",
+      "communes": [
+        "El Tarf",
+        "Aïn El Hamam",
+        "Tamalous",
+        "Tazmalt",
+        "Khenchela",
+        "El Amria",
+        "Bordj Bou Arreridj",
+        "Kendira",
+        "Sidi Bouzid",
+        "M'sila"
+      ]
+    },
+    {
+      "name": "37 - TINDOUF",
+      "communes": [
+        "Tindouf",
+        "Oum El Assel",
+        "El Ouata",
+        "Ain El Hadjel",
+        "Bir El Ater",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela"
+      ]
+    },
+    {
+      "name": "38 - TISSEMSILT",
+      "communes": [
+        "Tissemsilt",
+        "Ain El Hadjel",
+        "Bir El Ater",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "El Amria",
+        "El Madania"
+      ]
+    },
+    {
+      "name": "39 - EL OUED",
+      "communes": [
+        "El Oued",
+        "Ain El Hadjel",
+        "Bir El Ater",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria"
+      ]
+    },
+    {
+      "name": "40 - KHENCHLA",
+      "communes": [
+        "Khenchela",
+        "El Ouad",
+        "Bir El Ater",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria"
+      ]
+    },
+    {
+      "name": "41 - SOUK AHRAS",
+      "communes": [
+        "Souk Ahras",
+        "Ain Beida",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar"
+      ]
+    },
+    {
+      "name": "42 - TIPAZA",
+      "communes": [
+        "Tipaza",
+        "Bou Ismaïl",
+        "Zouila",
+        "El Amria",
+        "Kendira",
+        "Khenchela",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Sidi Bouzid"
+      ]
+    },
+    {
+      "name": "43 - MILA",
+      "communes": [
+        "Mila",
+        "Ain M'lila",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar"
+      ]
+    },
+    {
+      "name": "44 - AIN DEFLA",
+      "communes": [
+        "Ain Defla",
+        "Khemis Miliana",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar"
+      ]
+    },
+    {
+      "name": "45 - NAAMA",
+      "communes": [
+        "Naama",
+        "Ain Sefra",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar"
+      ]
+    },
+    {
+      "name": "46 - AIN TEMOUCHENT",
+      "communes": [
+        "Ain Temouchent",
+        "El Maleh",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar"
+      ]
+    },
+    {
+      "name": "47 - GHARDAIA",
+      "communes": [
+        "Ghardaïa",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "48 - RELIZANE",
+      "communes": [
+        "Relizane",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "49 - EL WAD",
+      "communes": [
+        "El Oued",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "50 - TIARET",
+      "communes": [
+        "Tiaret",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "51 - TIZI OUZOU",
+      "communes": [
+        "Tizi Ouzou",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "52 - BORDJ BOU ARRERIDJ",
+      "communes": [
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud",
+        "Khemis Miliana"
+      ]
+    },
+    {
+      "name": "53 - EL MADANIA",
+      "communes": [
+        "El Madania",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "54 - EL HARRACH",
+      "communes": [
+        "El Harrach",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "55 - EL HOCEIMA",
+      "communes": [
+        "El Hoceima",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "56 - DELLY IBRAHIM",
+      "communes": [
+        "Delly Ibrahim",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "57 - EL KSEUR",
+      "communes": [
+        "El Kseur",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    },
+    {
+      "name": "58 - EL MENIA",
+      "communes": [
+        "El Menia",
+        "Bordj Bou Arreridj",
+        "Djemila",
+        "M'sila",
+        "Kendira",
+        "Khenchela",
+        "Sidi Bouzid",
+        "El Amria",
+        "El Hadjar",
+        "Hassi Messaoud"
+      ]
+    }
   ]
 }

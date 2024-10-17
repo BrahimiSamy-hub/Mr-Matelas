@@ -57,7 +57,7 @@ const Pagination = () => {
             key={page}
             className={`p-2 border   w-8 h-8  rounded-lg flex items-center justify-center ${
               currentPage === page
-                ? 'bg-black text-white'
+                ? 'bg-[#0a62a5] text-white'
                 : 'bg-white text-black'
             }`}
             onClick={() => handlePageClick(page)}

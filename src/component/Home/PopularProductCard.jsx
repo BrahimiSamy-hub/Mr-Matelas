@@ -1,7 +1,8 @@
 import { matelas } from '../../assets'
 import { Link } from 'react-router-dom'
-
+import { useTranslation } from 'react-i18next'
 const PopularProductCard = ({ _id, name, price, lastPrice }) => {
+  const { t } = useTranslation()
   return (
     <Link
       draggable='false'
@@ -29,18 +30,18 @@ const PopularProductCard = ({ _id, name, price, lastPrice }) => {
           <>
             {price}
             <small>
-              <sup> DA </sup>
+              <sup> {t('devise')} </sup>
             </small>
           </>
         ) : (
           <>
             {price}
             <small>
-              <sup> DA </sup>
+              <sup> {t('devise')} </sup>
             </small>
             - {lastPrice}
             <small>
-              <sup> DA </sup>
+              <sup> {t('devise')} </sup>
             </small>
           </>
         )}

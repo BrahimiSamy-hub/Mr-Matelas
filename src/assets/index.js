@@ -12,8 +12,10 @@ import sommier from './product/sommier.webp'
 import sommiler from './product/sommiler.webp'
 import logo from '../assets/logo.svg'
 import logoPng from '../assets/logo.png'
+import hero from '../assets/hero.jpg'
 
 export {
+  hero,
   logoPng,
   logo,
   MenuSvg,

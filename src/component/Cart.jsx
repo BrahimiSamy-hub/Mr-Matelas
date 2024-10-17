@@ -156,13 +156,23 @@ const Cart = () => {
                         <div className='mt-6'>
                           <Link
                             draggable='false'
-                            to='/checkout'
-                            className='flex items-center justify-center rounded-md border border-transparent bg-[#0a62a5] px-6 py-3 text-base font-medium text-white shadow-sm hover:opacity-75'
-                            onClick={toggleCart}
+                            to={cartItems.length > 0 ? '/checkout' : '#'}
+                            className={`flex items-center justify-center rounded-md border border-transparent px-6 py-3 text-base font-medium shadow-sm ${
+                              cartItems.length === 0
+                                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                : 'bg-[#0a62a5] text-white hover:opacity-75'
+                            }`}
+                            onClick={
+                              cartItems.length > 0
+                                ? toggleCart
+                                : (e) => e.preventDefault()
+                            }
+                            disabled={cartItems.length === 0}
                           >
                             {t('checkout')}
                           </Link>
                         </div>
+
                         <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
                           <p>
                             {t('or')}{' '}

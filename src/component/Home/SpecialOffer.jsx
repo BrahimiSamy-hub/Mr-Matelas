@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import Button from '../Button'
-import { matelas } from '../../assets'
+import { hero } from '../../assets'
 
 const SpecialOffer = () => {
   const { t } = useTranslation()
@@ -10,11 +10,11 @@ const SpecialOffer = () => {
       <div className='flex-1'>
         <img
           draggable='false'
-          src={matelas}
+          src={hero}
           alt={t('specialOffer.altText')}
           width={773}
           height={687}
-          className='object-contain w-full'
+          className='object-contain rounded-[60px] w-full'
         />
       </div>
       <div className='flex flex-1 flex-col'>

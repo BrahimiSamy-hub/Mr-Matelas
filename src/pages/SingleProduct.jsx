@@ -211,10 +211,10 @@ const SingleProduct = () => {
                               className={({ active, checked }) =>
                                 classNames(
                                   active && checked
-                                    ? 'ring ring-offset-1 ring-indigo-500 '
+                                    ? 'ring ring-offset-1 ring-[#0a62a5] '
                                     : '',
                                   !active && checked
-                                    ? 'ring-2 ring-indigo-500 focus:scale-110 transition-transform duration-300'
+                                    ? 'ring-2 ring-[#0a62a5] focus:scale-110 transition-transform duration-300'
                                     : '',
                                   'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none '
                                 )
@@ -353,7 +353,7 @@ const SingleProduct = () => {
                   {/* Add to Cart Button */}
                   <button
                     type='submit'
-                    className={`mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:opacity-75 ${
+                    className={`mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-[#0a62a5] px-8 py-3 text-base font-medium text-white hover:opacity-75 ${
                       product.sizes.every((size) => !size.inStock)
                         ? 'opacity-25 cursor-not-allowed'
                         : ''
