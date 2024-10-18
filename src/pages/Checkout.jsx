@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import Footer from '../component/Footer'
 import { FaCircleCheck, FaSpinner } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { useOrder } from '../context/OrderContext' // Import the Order context
 import { useTranslation } from 'react-i18next'
 
 const Checkout = () => {
   const { t } = useTranslation()
   const { cartItems } = useCart()
-  const [isOrderSuccessful, setIsOrderSuccessful] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const { createOrderMutation, isLoading, isSuccess } = useOrder() // Use order context
 
   const {
     register,
@@ -18,54 +18,66 @@ const Checkout = () => {
     formState: { errors },
   } = useForm()
 
+  // Calculate totals
   const calculateTotal = (products) => {
     const subtotal = products.reduce(
       (acc, product) => acc + product.price * product.quantity,
       0
     )
-    const delivery = 400
+    const delivery = 500 // Fixed shipping price for example
     const total = subtotal + delivery
     return { subtotal, delivery, total }
   }
 
+  // On form submit, prepare the order data
   const onSubmit = (data) => {
-    setIsLoading(true)
     const { subtotal, delivery, total } = calculateTotal(cartItems)
-    const emailData = {
-      ...data,
-      cartItems: cartItems.map((product) => ({
-        name: product.name,
-        quantity: product.quantity,
-        price: product.price,
-        total: product.price * product.quantity,
-      })),
-      subtotal,
-      delivery,
+
+    // Prepare orderItems based on the cart
+    const orderItems = cartItems.map((product) => ({
+      product: product.id, // Assuming product._id is the product ID
+      quantity: product.quantity,
+      price: product.price,
+      hex: product.color,
+      longeur: product.size?.longeur,
+      largeur: product.size?.largeur,
+      epesseur: product.size?.epesseur,
+    }))
+
+    // Construct the full order data
+    const orderData = {
+      fullName: data.name,
+      address: data.address,
+      wilaya: data.wilaya,
+      commune: data.commune,
+      phoneNumber1: data.mobileNumber,
+      phoneNumber2: data.mobileNumber2 || '', // Optional field
+      shippingType: data.shippingMethod, // home or desk
       total,
-      cartItemsHtml: cartItems
-        .map(
-          (product) => `
-            <tr>
-              <td>${product.name}</td>
-              <td>${product.quantity}</td>
-              <td>${product.price} <sup className=''><small>DA</small></sup></td>
-            </tr>`
-        )
-        .join(''),
+      shippingPrice: delivery,
+      note: data.note || '', // Optional note field
+      orderItems,
     }
 
-    // Simulate successful order submission
-    setTimeout(() => {
-      setIsLoading(false)
-      setIsOrderSuccessful(true)
-    }, 2000)
+    // Send the order using createOrderMutation
+    createOrderMutation(orderData, {
+      onSuccess: () => {
+        // Handle success (e.g., show a success message or redirect)
+      },
+      onError: (error) => {
+        console.log(orderData)
+
+        // Handle error (e.g., show an error message)
+        console.error('Error placing order:', error)
+      },
+    })
   }
 
   return (
     <>
       <section className='container min-h-screen'>
         <div className='flex flex-col gap-10 sm:flex-row py-10'>
-          {isOrderSuccessful ? (
+          {isSuccess ? (
             <div className='w-full min-h-[450px] border p-4 rounded-xl flex flex-col justify-center items-center gap-6'>
               <FaCircleCheck color='green' size={80} />
               <h2 className='font-bold text-3xl leading-10 text-center uppercase'>
@@ -282,26 +294,26 @@ const Checkout = () => {
                 <div className='flex items-center mb-2'>
                   <input
                     type='radio'
-                    id='homeDelivery'
+                    id='home'
                     {...register('shippingMethod', {
                       required: t('shippingMethodRequired'),
                     })}
-                    value='homeDelivery'
+                    value='home'
                     className='mr-2'
                   />
-                  <label htmlFor='homeDelivery'>{t('home')}</label>
+                  <label htmlFor='home'>{t('home')}</label>
                 </div>
                 <div className='flex items-center mb-2'>
                   <input
                     type='radio'
-                    id='pickup'
+                    id='desk'
                     {...register('shippingMethod', {
                       required: t('shippingMethodRequired'),
                     })}
-                    value='pickup'
+                    value='desk'
                     className='mr-2'
                   />
-                  <label htmlFor='pickup'>{t('desk')}</label>
+                  <label htmlFor='desk'>{t('desk')}</label>
                 </div>
                 {errors.shippingMethod && (
                   <p className='text-red-500 text-sm'>
@@ -339,7 +351,7 @@ const Checkout = () => {
                   className='-my-6 divide-y divide-gray-200 max-h-[400px] overflow-y-auto'
                 >
                   {cartItems.map((product) => (
-                    <li key={product.id} className='flex py-6'>
+                    <li key={product._id} className='flex py-6'>
                       <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
                         <img
                           draggable='false'
@@ -361,14 +373,14 @@ const Checkout = () => {
                               </small>
                             </p>
                           </div>
-                          <p className='flex-row mt-1 text-md text-gray-500 mr-2'>
+                          <div className='flex-row mt-1 text-md text-gray-500 mr-2'>
                             <div
                               style={{ backgroundColor: product.color }}
                               className='justify-center w-6 h-6 mb-1 rounded-full border border-gray-300'
                             ></div>
                             {product.size?.longeur} * {product.size?.largeur} *{' '}
                             {product.size?.epesseur}
-                          </p>
+                          </div>
                         </div>
                         <div className='flex flex-1 items-end justify-between text-md mr-2'>
                           <p className='text-gray-500'>
