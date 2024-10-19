@@ -121,7 +121,7 @@ const SingleProduct = () => {
                     src={selectedImage}
                     alt='Product image'
                     className={classNames(
-                      'object-contain object-center h-[350px] rounded-lg bg-gray-100 transition-opacity duration-300',
+                      'object-cover object-center h-[350px] rounded-lg bg-gray-100 transition-opacity duration-300',
                       isAnimating ? 'opacity-0' : 'opacity-100'
                     )}
                     loading='lazy'
@@ -214,9 +214,9 @@ const SingleProduct = () => {
                                     ? 'ring ring-offset-1 ring-[#0a62a5] '
                                     : '',
                                   !active && checked
-                                    ? 'ring-2 ring-[#0a62a5] focus:scale-110 transition-transform duration-300'
+                                    ? 'ring-2 ring-[#0a62a5]  transition-transform duration-300'
                                     : '',
-                                  'relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none '
+                                  'relative m-1 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none '
                                 )
                               }
                             >

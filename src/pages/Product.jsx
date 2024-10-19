@@ -163,7 +163,7 @@ const Product = () => {
     <>
       <div>
         <div className=''>
-          <div className='flex'>
+          <div className='flex min-h-96'>
             <div className='mt-6 grid grid-cols-2 lg:gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-4'>
               <div className='col-span-4 mb-[-50px]'>
                 <div className='flex justify-between'>
