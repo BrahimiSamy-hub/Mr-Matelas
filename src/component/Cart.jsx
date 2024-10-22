@@ -176,7 +176,7 @@ const Cart = () => {
                         <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
                           <p>
                             {t('or')}{' '}
-                            <Link to='/' draggable='false'>
+                            <Link to='/shop' draggable='false'>
                               <button
                                 type='button'
                                 className='font-medium text-color-1 hover:text-[#0a62a5]'

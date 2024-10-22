@@ -4,6 +4,7 @@ import PopularProductCard from './PopularProductCard'
 
 const PopularProducts = () => {
   const { products } = useProducts()
+
   const { t } = useTranslation()
 
   // Sort products by the createdAt field in descending order (newest first) and limit to 4 products
@@ -29,6 +30,7 @@ const PopularProducts = () => {
           return (
             <PopularProductCard
               key={product._id}
+              image={product.images.urls[0]}
               name={product.frName}
               price={product?.sizes[0]?.price} // First price (index 0)
               lastPrice={product?.sizes[lastPriceIndex]?.price} // Last available price

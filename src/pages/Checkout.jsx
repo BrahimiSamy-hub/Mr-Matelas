@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import Footer from '../component/Footer'
 import { FaCircleCheck, FaSpinner } from 'react-icons/fa6'
@@ -6,28 +6,73 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useOrder } from '../context/OrderContext' // Import the Order context
 import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
+import wilayaMap from '../constant/wilaya.json'
+import i18n from 'i18next'
 
 const Checkout = () => {
   const { t } = useTranslation()
   const { cartItems } = useCart()
-  const { createOrderMutation, isLoading, isSuccess } = useOrder() // Use order context
+  const { createOrderMutation, isLoading, wilayas } = useOrder() // Use order context
+
+  // shipping type
+
+  const [selectedShippingType, setSelectedShippingType] = useState('')
+
+  const handleChange = (e) => {
+    setSelectedShippingType(e.target.value)
+
+    // Recalculate delivery fee when shipping type changes
+    if (selectedWilaya) {
+      const newIndex = Number(selectedWilaya) - 1 // Use selectedWilaya to get the index
+
+      const selectedWilayaDelivery =
+        e.target.value === 'home'
+          ? wilayas[newIndex]?.homePrice || 0
+          : e.target.value === 'desk'
+          ? wilayas[newIndex]?.deskPrice || 0
+          : 0 // Default to 0 if neither type is selected
+
+      setDelivery(selectedWilayaDelivery)
+    }
+  }
+
+  const [selectedWilaya, setSelectedWilaya] = useState('')
+  const [communes, setCommunes] = useState([])
+  const [delivery, setDelivery] = useState(0)
+
+  console.log(selectedShippingType)
+
+  const handleWilayaChange = (event) => {
+    const wilayaCode = event.target.value
+    setSelectedWilaya(wilayaCode)
+
+    // Filter communes based on the selected wilaya
+    const filteredCommunes = wilayaMap.filter(
+      (wilaya) => wilaya.wilaya_code === wilayaCode
+    )
+    setCommunes(filteredCommunes)
+
+    // Update the delivery fee based on the selected wilaya
+
+    const newIndex = Number(wilayaCode) - 1
+
+    const selectedWilayaDelivery =
+      selectedShippingType === 'home'
+        ? wilayas[newIndex]?.homePrice || 0
+        : selectedShippingType === 'desk'
+        ? wilayas[newIndex]?.deskPrice || 0
+        : 0 // Default to 0 if neither type is selected
+
+    setDelivery(selectedWilayaDelivery)
+  }
+  const [isSuccess, setIsSuccess] = useState(false)
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
-
-  // Calculate totals
-  const calculateTotal = (products) => {
-    const subtotal = products.reduce(
-      (acc, product) => acc + product.price * product.quantity,
-      0
-    )
-    const delivery = 500 // Fixed shipping price for example
-    const total = subtotal + delivery
-    return { subtotal, delivery, total }
-  }
 
   // On form submit, prepare the order data
   const onSubmit = (data) => {
@@ -55,14 +100,13 @@ const Checkout = () => {
       shippingType: data.shippingMethod, // home or desk
       total,
       shippingPrice: delivery,
-      note: data.note || '', // Optional note field
       orderItems,
     }
 
     // Send the order using createOrderMutation
     createOrderMutation(orderData, {
       onSuccess: () => {
-        // Handle success (e.g., show a success message or redirect)
+        setIsSuccess(true)
       },
       onError: (error) => {
         console.log(orderData)
@@ -72,6 +116,15 @@ const Checkout = () => {
       },
     })
   }
+
+  const uniqueWilayas = wilayaMap.reduce((acc, current) => {
+    const x = acc.find((item) => item.wilaya_code === current.wilaya_code)
+    if (!x) {
+      return acc.concat([current])
+    } else {
+      return acc
+    }
+  }, [])
 
   return (
     <>
@@ -219,12 +272,20 @@ const Checkout = () => {
                   className={`pl-3 py-3 border rounded-md bg-white text-gray-500 focus:border-white ${
                     errors.wilaya ? 'border-red-500' : ''
                   }`}
+                  onChange={handleWilayaChange}
                 >
                   <option value='' disabled>
                     {t('selectAWilaya')}
                   </option>
-                  {/* Add actual wilaya options here */}
-                  <option value='d'>ds</option>
+                  {uniqueWilayas.map((wilaya) => (
+                    <option key={wilaya.id} value={wilaya.wilaya_code}>
+                      {`${wilaya.wilaya_code} - ${
+                        i18n.language === 'ar'
+                          ? wilaya.wilaya_name
+                          : wilaya.wilaya_name_ascii
+                      }`}
+                    </option>
+                  ))}
                 </select>
                 {errors.wilaya && (
                   <p className='text-red-500 text-sm'>
@@ -232,7 +293,6 @@ const Checkout = () => {
                   </p>
                 )}
               </div>
-
               <div className='mb-4'>
                 <label
                   className='block mb-2 text-sm font-medium'
@@ -248,12 +308,18 @@ const Checkout = () => {
                   className={`pl-3 py-3 border rounded-md bg-white text-gray-500 focus:border-white ${
                     errors.commune ? 'border-red-500' : ''
                   }`}
+                  disabled={!selectedWilaya}
                 >
                   <option value='' disabled>
                     {t('selectCommune')}
                   </option>
-                  {/* Add actual commune options here */}
-                  <option value='d'>ds</option>
+                  {communes.map((commune) => (
+                    <option key={commune.id} value={commune.commune_name_ascii}>
+                      {i18n.language === 'ar'
+                        ? commune.commune_name
+                        : commune.commune_name_ascii}
+                    </option>
+                  ))}
                 </select>
                 {errors.commune && (
                   <p className='text-red-500 text-sm'>
@@ -300,6 +366,7 @@ const Checkout = () => {
                     })}
                     value='home'
                     className='mr-2'
+                    onChange={handleChange}
                   />
                   <label htmlFor='home'>{t('home')}</label>
                 </div>
@@ -312,6 +379,7 @@ const Checkout = () => {
                     })}
                     value='desk'
                     className='mr-2'
+                    onChange={handleChange}
                   />
                   <label htmlFor='desk'>{t('desk')}</label>
                 </div>
@@ -406,7 +474,7 @@ const Checkout = () => {
                   <div className='flex justify-between text-base font-medium'>
                     <p>{t('delivery')}</p>
                     <p>
-                      400
+                      {delivery}
                       <small className='ml-1'>
                         <sup>DA</sup>
                       </small>

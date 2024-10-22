@@ -121,7 +121,7 @@ const SingleProduct = () => {
                     src={selectedImage}
                     alt='Product image'
                     className={classNames(
-                      'object-cover object-center h-[350px] rounded-lg bg-gray-100 transition-opacity duration-300',
+                      'object-cover object-center  rounded-lg bg-gray-100 transition-opacity duration-300',
                       isAnimating ? 'opacity-0' : 'opacity-100'
                     )}
                     loading='lazy'
