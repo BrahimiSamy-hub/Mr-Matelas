@@ -9,11 +9,27 @@ import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import wilayaMap from '../constant/wilaya.json'
 import i18n from 'i18next'
+import { useNavigate } from 'react-router-dom'
 
 const Checkout = () => {
   const { t } = useTranslation()
-  const { cartItems } = useCart()
+  const { cartItems, clearCart } = useCart()
+  const navigate = useNavigate()
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  useEffect(() => {
+    if (cartItems.length === 0 && !isSuccess) {
+      navigate('/shop')
+    }
+  }, [cartItems, navigate, isSuccess])
   const { createOrderMutation, isLoading, wilayas } = useOrder() // Use order context
+
+  const calculateSubtotal = () => {
+    return cartItems.reduce(
+      (total, item) => total + parseFloat(item.price) * item.quantity,
+      0
+    )
+  }
 
   // shipping type
 
@@ -66,7 +82,6 @@ const Checkout = () => {
 
     setDelivery(selectedWilayaDelivery)
   }
-  const [isSuccess, setIsSuccess] = useState(false)
 
   const {
     register,
@@ -76,8 +91,6 @@ const Checkout = () => {
 
   // On form submit, prepare the order data
   const onSubmit = (data) => {
-    const { subtotal, delivery, total } = calculateTotal(cartItems)
-
     // Prepare orderItems based on the cart
     const orderItems = cartItems.map((product) => ({
       product: product.id, // Assuming product._id is the product ID
@@ -98,7 +111,7 @@ const Checkout = () => {
       phoneNumber1: data.mobileNumber,
       phoneNumber2: data.mobileNumber2 || '', // Optional field
       shippingType: data.shippingMethod, // home or desk
-      total,
+      total: calculateSubtotal(),
       shippingPrice: delivery,
       orderItems,
     }
@@ -107,6 +120,7 @@ const Checkout = () => {
     createOrderMutation(orderData, {
       onSuccess: () => {
         setIsSuccess(true)
+        clearCart()
       },
       onError: (error) => {
         console.log(orderData)
@@ -165,6 +179,7 @@ const Checkout = () => {
                 </label>
                 <input
                   type='text'
+                  autoComplete='new-name'
                   id='name'
                   {...register('name', { required: t('nameRequired') })}
                   className={`w-full px-4 py-3 border rounded-md bg-white focus:border-white ${
@@ -186,6 +201,7 @@ const Checkout = () => {
                   <span className='text-red-500'>*</span>
                 </label>
                 <input
+                  autoComplete='new-email'
                   type='email'
                   id='email'
                   {...register('email', { required: t('emailRequired') })}
@@ -208,6 +224,7 @@ const Checkout = () => {
                   <span className='text-red-500'>*</span>
                 </label>
                 <input
+                  autoComplete='new-tel'
                   type='tel'
                   id='mobileNumber'
                   {...register('mobileNumber', {
@@ -237,6 +254,7 @@ const Checkout = () => {
                   {t('mobilePhone2')}
                 </label>
                 <input
+                  autoComplete='new-tel'
                   type='tel'
                   id='mobileNumber2'
                   {...register('mobileNumber2', {
@@ -337,6 +355,7 @@ const Checkout = () => {
                   <span className='text-red-500'>*</span>
                 </label>
                 <input
+                  autoComplete='new-address'
                   type='text'
                   id='address'
                   {...register('address', { required: t('adressRequired') })}
@@ -418,8 +437,8 @@ const Checkout = () => {
                   role='list'
                   className='-my-6 divide-y divide-gray-200 max-h-[400px] overflow-y-auto'
                 >
-                  {cartItems.map((product) => (
-                    <li key={product._id} className='flex py-6'>
+                  {cartItems.map((product, index) => (
+                    <li key={index} className='flex py-6'>
                       <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
                         <img
                           draggable='false'
@@ -465,7 +484,7 @@ const Checkout = () => {
                   <div className='flex justify-between text-base font-medium'>
                     <p>{t('subtotal')}</p>
                     <p>
-                      3500
+                      {calculateSubtotal()}
                       <small className='ml-1'>
                         <sup>DA</sup>
                       </small>
@@ -484,7 +503,7 @@ const Checkout = () => {
                   <div className='flex justify-between text-base font-medium'>
                     <p>{t('total')}</p>
                     <p>
-                      3900
+                      {calculateSubtotal() + delivery}
                       <small className='ml-1'>
                         <sup>DA</sup>
                       </small>

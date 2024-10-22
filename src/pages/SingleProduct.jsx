@@ -164,12 +164,14 @@ const SingleProduct = () => {
                 <small
                   className={classNames(
                     'text-xl border rounded p-2 flex text-center',
-                    product.inStock
+                    product.sizes.some((size) => size.inStock)
                       ? 'text-green-500 bg-green-500/15'
                       : 'text-red-500 bg-red-500/15'
                   )}
                 >
-                  {product.inStock ? t('inStock') : t('outOfStock')}
+                  {product.sizes.some((size) => size.inStock)
+                    ? t('inStock')
+                    : t('outOfStock')}
                 </small>
               </h2>
 
